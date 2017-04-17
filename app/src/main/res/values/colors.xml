@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<color name="select_dark_red">#f44336</color>-->
+    <!--<color name="unselect_light_red">#ffebee</color>-->
+    <!--<color name="btn_normal">#00000000</color>-->
+    <!--<color name="light_red">#ef9a9a</color>-->
+    <!--<color name="light_gray">#e0e0e0</color>-->
+    <!--<color name="light_grey">#757575</color>-->
+    <!--<color name="primary">#ef5350</color>-->
+    <!--<color name="primary_dark">#f44336</color>-->
+    <!--<color name="accent">#ec407a</color>-->
+    <!--<color name="btn_pressed">#40ffffff</color>-->
+
+    <!--<color name="primary_night">#1A1A1B</color>-->
+    <!--<color name="primary_dark_night">#1E1F21</color>-->
+    <!--<color name="night_grey">#AAAAAA</color>-->
+    <!--<color name="night_accent">#AAAAAA</color>-->
+
+    <color name="select_dark_red">#f44336</color>
+    <color name="unselect_light_red">#ffebee</color>
+    <color name="btn_normal">#00000000</color>
+    <color name="light_red">#ef9a9a</color>
+    <color name="light_gray">#e0e0e0</color>
+    <color name="light_grey">#757575</color>
+    <!--基础色-->
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303f9f</color>
+    <color name="accent">#ec407a</color>
+
+    <color name="btn_pressed">#40ffffff</color>
+
+    <color name="primary_night">#1A1A1B</color>
+    <color name="primary_dark_night">#1E1F21</color>
+    <color name="night_grey">#AAAAAA</color>
+    <color name="night_accent">#AAAAAA</color>
+
+
+
+
+
+
+
+</resources>
