@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.bupt.weeat.fragment.RecommendationFragment;
-import com.bupt.weeat.fragment.NewDishFragment;
+import com.bupt.weeat.fragment.NewGoodFragment;
 import com.bupt.weeat.fragment.WeekRankFragment;
 
 
@@ -27,7 +27,7 @@ public class FindPagerAdapter extends FragmentPagerAdapter {
             case RECOMMENDATION_FRAGMENT:
                 return RecommendationFragment.newInstance();
             case NEW_PRODUCT_FRAGMENT:
-                return NewDishFragment.newInstance();
+                return NewGoodFragment.newInstance();
             case WEEK_RANK_FRAGMENT:
                 return WeekRankFragment.newInstance();
             default:

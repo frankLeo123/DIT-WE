@@ -42,8 +42,8 @@ import cn.bmob.v3.listener.UpdateListener;
 ////////////////////////////////////////////////////////////////////
 //评论给写死了，改了一些
 ///////////////////////////////////////////////////////////////////
-public class DishDetailActivity extends BaseActivity implements View.OnClickListener {
-    private static final String TAG = DishDetailActivity.class.getSimpleName();
+public class GoodDetailActivity extends BaseActivity implements View.OnClickListener {
+    private static final String TAG = GoodDetailActivity.class.getSimpleName();
     private Context mContext;
     private static final int NEW_DISH_CODE = 0;
     private static final int WEEK_DISH_CODE = 1;
@@ -141,7 +141,7 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
             }
         } else {
             ToastUtils.showToast(mContext, R.string.please_login_first, Toast.LENGTH_SHORT);
-            Intent intent = new Intent(DishDetailActivity.this, LoginActivity.class);
+            Intent intent = new Intent(GoodDetailActivity.this, LoginActivity.class);
             startActivity(intent);
             return false;
         }
@@ -212,7 +212,7 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
         commentLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.showToast(DishDetailActivity.this, "" + (position + 1), Toast.LENGTH_SHORT);
+                ToastUtils.showToast(GoodDetailActivity.this, "" + (position + 1), Toast.LENGTH_SHORT);
             }
         });
     }
@@ -245,7 +245,7 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
             case R.id.dish_detail_load_more_comments:
                 if (!isLogin()) {
                     ToastUtils.showToast(mContext, R.string.please_login_first, Toast.LENGTH_SHORT);
-                    Intent intent = new Intent(DishDetailActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(GoodDetailActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } else {
                     queryComment();
@@ -272,12 +272,12 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
         comment.save(mContext, new SaveListener() {
             @Override
             public void onSuccess() {
-                ToastUtils.showToast(DishDetailActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
+                ToastUtils.showToast(GoodDetailActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
                 list.add(comment);
                 adapter.notifyDataSetChanged();
                 setListViewHeightBasedOnChildren(commentLv);
                 dishCommentEt.setText("");
-                dishObject.update(DishDetailActivity.this, new UpdateListener() {
+                dishObject.update(GoodDetailActivity.this, new UpdateListener() {
                     @Override
                     public void onSuccess() {
                     }
@@ -291,7 +291,7 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
 
             @Override
             public void onFailure(int i, String s) {
-                ToastUtils.showToast(DishDetailActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
+                ToastUtils.showToast(GoodDetailActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
             }
         });
     }
@@ -315,20 +315,20 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
                 if (lists.size() != 0 && lists.get(lists.size() - 1) != null) {
                     if (lists.size() < Constant.NUM_PER_PAGE)
                         loadMoreComment.setText("暂无更多评论");
-                    ToastUtils.showToast(DishDetailActivity.this, R.string.load_comment_success, Toast.LENGTH_SHORT);
+                    ToastUtils.showToast(GoodDetailActivity.this, R.string.load_comment_success, Toast.LENGTH_SHORT);
                     list.addAll(lists);
                     LogUtils.i(TAG, lists.size() + "");
                     adapter.notifyDataSetChanged();
                     setListViewHeightBasedOnChildren(commentLv);
                 } else {
                     loadMoreComment.setText("暂无更多评论");
-                    ToastUtils.showToast(DishDetailActivity.this, R.string.no_more_comments, Toast.LENGTH_SHORT);
+                    ToastUtils.showToast(GoodDetailActivity.this, R.string.no_more_comments, Toast.LENGTH_SHORT);
                 }
             }
 
             @Override
             public void onError(int i, String s) {
-                ToastUtils.showToast(DishDetailActivity.this, R.string.query_fail, Toast.LENGTH_SHORT);
+                ToastUtils.showToast(GoodDetailActivity.this, R.string.query_fail, Toast.LENGTH_SHORT);
 
             }
         });

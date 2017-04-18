@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
-import com.bupt.weeat.activity.DishDetailActivity;
+import com.bupt.weeat.activity.GoodDetailActivity;
 import com.bupt.weeat.adapter.WeekRankAdapter;
 import com.bupt.weeat.db.DishDB;
 import com.bupt.weeat.model.DishBean;
@@ -88,7 +88,7 @@ public class WeekRankFragment extends BaseFragment {
             @Override
             public void onItemClick(View view, int position) {
                 Log.i(TAG,"onItemClick");
-                Intent intent = new Intent(context, DishDetailActivity.class);
+                Intent intent = new Intent(context, GoodDetailActivity.class);
                 intent.putExtra("week_dish_data", list.get(position));
                 intent.putExtra("DISH_CODE", WEEK_DISH_CODE);
                 startActivity(intent);

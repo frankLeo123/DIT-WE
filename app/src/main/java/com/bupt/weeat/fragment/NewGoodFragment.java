@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
-import com.bupt.weeat.activity.DishDetailActivity;
+import com.bupt.weeat.activity.GoodDetailActivity;
 import com.bupt.weeat.adapter.NewDishAdapter;
 import com.bupt.weeat.db.DishDB;
 import com.bupt.weeat.model.DishBean;
@@ -25,12 +25,12 @@ import java.util.ArrayList;
 import butterknife.InjectView;
 
 
-public class NewDishFragment extends BaseFragment {
+public class NewGoodFragment extends BaseFragment {
     @InjectView(value = R.id.new_dish_recycler)
     RecyclerView recyclerView;
     private static final int NEW_DISH_CODE = 0;
     private ArrayList<DishBean> list;
-    private static final String TAG = NewDishFragment.class.getSimpleName();
+    private static final String TAG = NewGoodFragment.class.getSimpleName();
     private NewDishAdapter adapter;
     private Handler mHandler;
 
@@ -43,7 +43,7 @@ public class NewDishFragment extends BaseFragment {
     protected void initData() {
         super.initData();
         list = new ArrayList<>();
-        mHandler = new MyHandler(NewDishFragment.this);
+        mHandler = new MyHandler(NewGoodFragment.this);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
@@ -59,7 +59,7 @@ public class NewDishFragment extends BaseFragment {
             @Override
             public void onItemClick(View view, int position) {
                 try {
-                    Intent intent = new Intent(context, DishDetailActivity.class);
+                    Intent intent = new Intent(context, GoodDetailActivity.class);
                     intent.putExtra("new_dish_data", list.get(position));
                     intent.putExtra("DISH_CODE", NEW_DISH_CODE);
                     Log.i(TAG,"onItemClick");
@@ -77,15 +77,15 @@ public class NewDishFragment extends BaseFragment {
         });
     }
 
-    public static NewDishFragment newInstance() {
-        return new NewDishFragment();
+    public static NewGoodFragment newInstance() {
+        return new NewGoodFragment();
 
     }
 
     private class MyHandler extends Handler {
-        private final WeakReference<NewDishFragment> mTarget;
+        private final WeakReference<NewGoodFragment> mTarget;
 
-        public MyHandler(NewDishFragment fragment) {
+        public MyHandler(NewGoodFragment fragment) {
             mTarget = new WeakReference<>(fragment);
         }
 

@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.DishDetailActivity"
+            android:name=".activity.GoodDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
 
