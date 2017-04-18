@@ -13,7 +13,7 @@ import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
 import com.bupt.weeat.activity.GoodDetailActivity;
 import com.bupt.weeat.adapter.NewGoodAdapter;
-import com.bupt.weeat.db.DishDB;
+import com.bupt.weeat.db.GoodDB;
 import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.HttpUtils;
@@ -110,15 +110,15 @@ public class NewGoodFragment extends BaseFragment {
     }
 
     private void queryNewDish() {
-        DishDB mDishDB = DishDB.getInstance(context);
-        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("NewDish");
+        GoodDB mGoodDB = GoodDB.getInstance(context);
+        ArrayList<GoodBean> dish_list = mGoodDB.queryDishFromDataBase("NewDish");
         if (dish_list.size() > 0) {
             LogUtils.i(TAG, "query from database");
             list.addAll(dish_list);
             adapter.notifyDataSetChanged();
         } else {
             LogUtils.i(TAG, "query from server");
-            HttpUtils.connectToServer(Constant.NEW_DISH_URL, mHandler, context);
+            HttpUtils.connectToServer(Constant.NEW_GOOD_URL, mHandler, context);
         }
     }
 }

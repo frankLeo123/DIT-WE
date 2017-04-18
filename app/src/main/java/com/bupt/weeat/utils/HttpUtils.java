@@ -9,7 +9,7 @@ import com.bupt.weeat.Constant;
 import com.bupt.weeat.data.HotRecommendationDishData;
 import com.bupt.weeat.data.NewGoodData;
 import com.bupt.weeat.data.WeekGoodData;
-import com.bupt.weeat.db.DishDB;
+import com.bupt.weeat.db.GoodDB;
 import com.bupt.weeat.model.GoodBean;
 
 import java.io.BufferedReader;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 ////////////////////////////////
 public class HttpUtils {
     private static String jsonContent = "";
-    private static DishDB mDishDB;
+    private static GoodDB mGoodDB;
 //path是判断是哪个模块的
     public static void connectToServer(final String path, final Handler mHandler, final Context mContext) {
         new Thread(new Runnable() {
@@ -55,7 +55,7 @@ public class HttpUtils {
                             HotRecommendationDishData hot_data = new HotRecommendationDishData();
                             list = hot_data.parserHotRecommendation(jsonContent);
                             break;
-                        case Constant.NEW_DISH_URL:
+                        case Constant.NEW_GOOD_URL:
                             NewGoodData new_data = new NewGoodData();
                             list = new_data.parserNewDish(jsonContent);
                             break;
@@ -66,9 +66,9 @@ public class HttpUtils {
                         default:
                             break;
                     }
-                    mDishDB = DishDB.getInstance(mContext);
+                    mGoodDB = GoodDB.getInstance(mContext);
                     for (GoodBean dishObject : list) {
-                        mDishDB.saveDishToDataBase(dishObject, path);
+                        mGoodDB.saveDishToDataBase(dishObject, path);
                     }
                     if (mHandler != null && list != null) {
                         Message msg = Message.obtain(mHandler, 0x01, list);

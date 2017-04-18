@@ -7,7 +7,7 @@ import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobRelation;
 
 
-//可能定义了bean组件
+//可能定义了Bmob组件,json数据传给他们
 public class GoodBean extends BmobObject implements Serializable {
     private String Name;
     private String Location;

@@ -10,22 +10,22 @@ import com.bupt.weeat.Constant;
 
 import java.util.ArrayList;
 
-public class DishDB {
+public class GoodDB {
     private static final String DB_NAME = "dish database";
     private static final int VERSION = 1;
-    private static DishDB mDishDB;
+    private static GoodDB mGoodDB;
     private SQLiteDatabase db;
-    private static final String TAG = DishDB.class.getSimpleName();
+    private static final String TAG = GoodDB.class.getSimpleName();
 
-    public DishDB(Context mContext) {
+    public GoodDB(Context mContext) {
         DishOpenHelper helper = new DishOpenHelper(mContext, DB_NAME, null, VERSION);
         db = helper.getWritableDatabase();
     }
 
-    public synchronized static DishDB getInstance(Context mContext) {
-        if (mDishDB == null)
-            mDishDB = new DishDB(mContext);
-        return mDishDB;
+    public synchronized static GoodDB getInstance(Context mContext) {
+        if (mGoodDB == null)
+            mGoodDB = new GoodDB(mContext);
+        return mGoodDB;
     }
 
     public void saveDishToDataBase(GoodBean dishObject, String path) {
@@ -46,7 +46,7 @@ public class DishDB {
                 e.printStackTrace();
             }
             switch (path) {
-                case Constant.NEW_DISH_URL:
+                case Constant.NEW_GOOD_URL:
                     db.insert(" NewDish", null, values);
                     break;
                 case Constant.HOT_RECOMMENDATION_URL:

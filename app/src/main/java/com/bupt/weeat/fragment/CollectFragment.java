@@ -12,9 +12,8 @@ import android.view.View;
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
 import com.bupt.weeat.activity.GoodDetailActivity;
-import com.bupt.weeat.adapter.CollectAdapter;
 import com.bupt.weeat.adapter.NewGoodAdapter;
-import com.bupt.weeat.db.DishDB;
+import com.bupt.weeat.db.GoodDB;
 import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.HttpUtils;
@@ -31,7 +30,7 @@ public class CollectFragment extends BaseFragment {
     private static final int RECIPE_RECOMMENDED = 1;
     @InjectView(value = R.id.new_dish_recycler)
     RecyclerView recyclerView;
-    private static final int NEW_DISH_CODE = 0;
+    private static final int NEW_GOOD_CODE = 0;
     private ArrayList<GoodBean> list;
     private static final String TAG = NewGoodFragment.class.getSimpleName();
     private NewGoodAdapter adapter;
@@ -59,15 +58,15 @@ public class CollectFragment extends BaseFragment {
     }
 
     private void queryNewDish() {
-        DishDB mDishDB = DishDB.getInstance(context);
-        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("NewDish");
+        GoodDB mGoodDB = GoodDB.getInstance(context);
+        ArrayList<GoodBean> dish_list = mGoodDB.queryDishFromDataBase("NewDish");
         if (dish_list.size() > 0) {
             LogUtils.i(TAG, "query from database");
             list.addAll(dish_list);
             adapter.notifyDataSetChanged();
         } else {
             LogUtils.i(TAG, "query from server");
-            HttpUtils.connectToServer(Constant.NEW_DISH_URL, mHandler, context);
+            HttpUtils.connectToServer(Constant.NEW_GOOD_URL, mHandler, context);
         }
     }
     @Override
@@ -79,7 +78,7 @@ public class CollectFragment extends BaseFragment {
                 try {
                     Intent intent = new Intent(context, GoodDetailActivity.class);
                     intent.putExtra("new_dish_data", list.get(position));
-                    intent.putExtra("DISH_CODE", NEW_DISH_CODE);
+                    intent.putExtra("DISH_CODE", NEW_GOOD_CODE);
                     Log.i(TAG,"onItemClick");
                     startActivity(intent);
                 } catch (Exception e) {

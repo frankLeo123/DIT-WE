@@ -16,7 +16,7 @@ import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
 import com.bupt.weeat.activity.GoodDetailActivity;
 import com.bupt.weeat.adapter.WeekRankAdapter;
-import com.bupt.weeat.db.DishDB;
+import com.bupt.weeat.db.GoodDB;
 import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.HttpUtils;
@@ -37,7 +37,7 @@ public class WeekRankFragment extends BaseFragment {
 
     private static final int WEEK_DISH_CODE = 1;
     private MyHandler mHandler;
-    private DishDB mDishDB;
+    private GoodDB mGoodDB;
     private WeekRankAdapter adapter;
     private static final String TAG = WeekRankFragment.class.getSimpleName();
 
@@ -142,8 +142,8 @@ public class WeekRankFragment extends BaseFragment {
     }
 
    private void queryNewDish() {
-        mDishDB = DishDB.getInstance(context);
-        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("WeekDish");
+        mGoodDB = GoodDB.getInstance(context);
+        ArrayList<GoodBean> dish_list = mGoodDB.queryDishFromDataBase("WeekDish");
         if (dish_list.size() > 0) {
             LogUtils.i(TAG, "query from database");
             list.addAll(dish_list);

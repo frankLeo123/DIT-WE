@@ -9,7 +9,8 @@ public class Constant {
     public static final int NUM_PER_PAGE = 15;
     //三个主要模块
     public static final String WEEK_RANK_URL = "http://182.92.6.59/WeEat/back/WeEat/index.php?r=home/hotest";
-    public static final String NEW_DISH_URL = "http://182.92.6.59/WeEat/back/WeEat/index.php?r=home/new";
+    public static final String NEW_GOOD_URL = "http://182.92.6.59/WeEat/back/WeEat/index.php?r=home/new";
     public static final String HOT_RECOMMENDATION_URL = "http://182.92.6.59/WeEat/back/WeEat/index.php?r=home/recommendation";
+    //占位符已经不能用了
     public static final  String PLACEHOLDER_URL="http://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/929118_455075441302693_1605108410_a.jpg";
 }

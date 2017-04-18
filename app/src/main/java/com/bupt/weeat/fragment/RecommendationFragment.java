@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
 import com.bupt.weeat.activity.ImageDetailActivity;
-import com.bupt.weeat.db.DishDB;
+import com.bupt.weeat.db.GoodDB;
 import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.utils.HttpUtils;
 import com.bupt.weeat.utils.LogUtils;
@@ -107,8 +107,8 @@ public class RecommendationFragment extends Fragment implements View.OnClickList
     }
 
     private void queryRecommendationDish() {
-        DishDB mDishDB = DishDB.getInstance(mContext);
-        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("RecommendationDish");
+        GoodDB mGoodDB = GoodDB.getInstance(mContext);
+        ArrayList<GoodBean> dish_list = mGoodDB.queryDishFromDataBase("RecommendationDish");
         if (dish_list.size() > 0) {
             list.addAll(dish_list);
             initView(list);
