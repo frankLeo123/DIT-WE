@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
 import com.bupt.weeat.R;
 import com.bupt.weeat.db.SharedPreferencesHelper;
 import com.bupt.weeat.utils.ActivityUtils;

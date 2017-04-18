@@ -3,6 +3,6 @@
     android:layout_width="?attr/actionBarSize"
     android:layout_height="?attr/actionBarSize"
     android:background="@drawable/button_selector"
-    android:src="@drawable/actionbar_take_picture">
+    android:src="@drawable/dlut">
 
 </ImageButton>

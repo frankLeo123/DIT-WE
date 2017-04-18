@@ -5,7 +5,8 @@ public class Constant {
     public static final String LOGTAG = "SIMPLE_EXPRESS";//日志TAG
     public static final String MALE_SEX = "male";
     public static final String FEMALE_SEX = "female";
-    public static final String APPLICATION_ID = "fd9ca1b1796c3286884114d0a3782e5f";//bmob需要APP KEY
+//    public static final String APPLICATION_ID = "fd9ca1b1796c3286884114d0a3782e5f";//bmob需要APP KEY
+    public static final String APPLICATION_ID = "3d438d9423ba94fc323eb73c37b6fa21";//bmob需要APP KEY
     public static final int NUM_PER_PAGE = 15;
     //三个主要模块
     public static final String WEEK_RANK_URL = "http://182.92.6.59/WeEat/back/WeEat/index.php?r=home/hotest";
