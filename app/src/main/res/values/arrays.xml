@@ -14,12 +14,12 @@
         <item >@string/drawer_person</item>
         <item >@string/drawer_heath</item>
     </string-array>
-    <string-array name="newpro_food_location">
-        <item>@string/newpro_food_location1</item>
-        <item>@string/newpro_food_location2</item>
+    <string-array name="newpro_good_location">
+        <item>@string/newpro_good_location1</item>
+        <item>@string/newpro_good_location2</item>
     </string-array>
-    <string-array name="newpro_food_name">
-        <item>@string/newpro_food_name1</item>
-        <item>@string/newpro_food_name2</item>
+    <string-array name="newpro_good_name">
+        <item>@string/newpro_good_name1</item>
+        <item>@string/newpro_good_name2</item>
     </string-array>
 </resources>

@@ -33,7 +33,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
-                android:text="@string/newpro_food_name1"
+                android:text="@string/newpro_good_name1"
                 android:textColor="@color/light_grey" />
 
             <TextView
@@ -41,11 +41,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="70dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="170dp"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/new_dish_name"
-                android:gravity="center"
+                android:gravity="end"
                 android:padding="5dp"
                 android:text="8"
                 android:textColor="@color/light_grey" />
@@ -64,7 +64,7 @@
                 android:layout_height="30dp"
                 android:gravity="end"
                 android:padding="5dp"
-                android:text="@string/newpro_food_location1"
+                android:text="@string/newpro_good_location1"
                 android:textColor="@color/light_grey" />
 
             <TextView
@@ -73,10 +73,11 @@
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="20dp"
+                android:gravity="end"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/new_dish_location"
-                android:text="2015-06-13"
+                android:text="2017-06-13"
                 android:textColor="@color/light_grey" />
         </RelativeLayout>
 

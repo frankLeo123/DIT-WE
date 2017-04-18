@@ -64,7 +64,7 @@
                     android:layout_alignParentStart="true"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="@string/newpro_food_name1"
+                    android:text="@string/newpro_good_name1"
                     android:textColor="@color/light_grey"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -77,13 +77,14 @@
                     android:layout_toEndOf="@id/newpro_detail_food_name"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="@string/newpro_fooddetail_price"
+                    android:gravity="end"
+                    android:text="@string/newpro_gooddetail_price"
                     android:textColor="@color/light_grey"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/newpro_detail_food_falvorlayout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -92,26 +93,37 @@
 
                 <TextView
                     android:id="@+id/newpro_detail_food_flavor"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="@string/newpro_fooddetail_flavor"
+                    android:text="@string/newpro_gooddetail_flavor"
                     android:textColor="@color/light_grey"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/newpro_detail_food_flavorkind"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/test"
+                    android:layout_width="0dp"
+                    android:layout_weight="9"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/newpro_detail_food_flavor"
-                    android:background="@color/select_dark_red"
-                    android:text="@string/newpro_fooddetail_flavorkind"
-                    android:textColor="@color/light_grey"
                     android:textSize="14sp"
                     android:textStyle="bold" />
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/newpro_detail_food_flavorkind"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/test"
+                    android:background="@color/select_dark_red"
+                    android:text="@string/newpro_gooddetail_flavorkind"
+                    android:textColor="@color/light_grey"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/newpro_food_detail_windowlayout"
@@ -127,19 +139,20 @@
                     android:layout_alignParentStart="true"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="@string/newpro_fooddetail_window"
+                    android:text="@string/newpro_gooddetail_window"
                     android:textColor="@color/light_grey"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/newpro_food_detail_windowname"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/newpro_food_detail_window"
-                    android:text="@string/newpro_fooddetail_windowdetail"
+                    android:text="@string/newpro_gooddetail_windowdetail"
                     android:textColor="@color/light_grey"
                     android:textSize="14sp"
+                    android:gravity="end"
                     android:textStyle="bold" />
             </RelativeLayout>
 
