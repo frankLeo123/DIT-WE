@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
-import com.bupt.weeat.adapter.DishCommentAdapter;
+import com.bupt.weeat.adapter.GoodCommentAdapter;
 import com.bupt.weeat.entity.Comment;
 import com.bupt.weeat.entity.User;
 import com.bupt.weeat.model.DishBean;
@@ -70,7 +70,7 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
 
     private ArrayList<Comment> list;
 
-    private DishCommentAdapter adapter;
+    private GoodCommentAdapter adapter;
     private DishBean dishObject;
 
     @Override
@@ -198,7 +198,7 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void initListView() {
-        adapter = new DishCommentAdapter(mContext, list);
+        adapter = new GoodCommentAdapter(mContext, list);
         commentLv.setAdapter(adapter);
         if (isLogin()) {
             queryComment();

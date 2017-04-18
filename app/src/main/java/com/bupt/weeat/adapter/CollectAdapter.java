@@ -13,13 +13,13 @@ import com.bupt.weeat.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-
-public class HealthAdapter extends RecyclerView.Adapter<HealthAdapter.ViewHolder> {
+//改一下数据
+public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.ViewHolder> {
     private int[] imageIds = {R.drawable.ic_heat_statistics, R.drawable.ic_recipe_recommended};
     private String[] textArray = {"热量统计", "食谱推荐"};
     private Context context;
 
-    public HealthAdapter(Context context) {
+    public CollectAdapter(Context context) {
         this.context = context;
     }
 

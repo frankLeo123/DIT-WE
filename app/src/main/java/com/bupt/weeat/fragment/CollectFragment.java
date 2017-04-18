@@ -4,11 +4,10 @@ package com.bupt.weeat.fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import com.bupt.weeat.R;
+import com.bupt.weeat.adapter.CollectAdapter;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.LogUtils;
-
 import butterknife.InjectView;
 
 //收藏界面
@@ -30,7 +29,7 @@ public class CollectFragment extends BaseFragment {
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
-//        recyclerView.setAdapter(new HealthAdapter(context));
+        recyclerView.setAdapter(new CollectAdapter(context));
     }
 
     @Override

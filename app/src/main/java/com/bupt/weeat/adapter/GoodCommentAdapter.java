@@ -13,11 +13,11 @@ import com.bupt.weeat.entity.Comment;
 
 import java.util.ArrayList;
 
-public class DishCommentAdapter extends BaseAdapter {
+public class GoodCommentAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<Comment> commentList;
 
-    public DishCommentAdapter(Context mContext, ArrayList<Comment> commentList) {
+    public GoodCommentAdapter(Context mContext, ArrayList<Comment> commentList) {
         this.mContext = mContext;
         this.commentList = commentList;
     }

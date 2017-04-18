@@ -12,7 +12,7 @@ import android.view.View;
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
 import com.bupt.weeat.activity.GoodDetailActivity;
-import com.bupt.weeat.adapter.NewDishAdapter;
+import com.bupt.weeat.adapter.NewGoodAdapter;
 import com.bupt.weeat.db.DishDB;
 import com.bupt.weeat.model.DishBean;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
@@ -31,7 +31,7 @@ public class NewGoodFragment extends BaseFragment {
     private static final int NEW_DISH_CODE = 0;
     private ArrayList<DishBean> list;
     private static final String TAG = NewGoodFragment.class.getSimpleName();
-    private NewDishAdapter adapter;
+    private NewGoodAdapter adapter;
     private Handler mHandler;
 
     @Override
@@ -47,7 +47,7 @@ public class NewGoodFragment extends BaseFragment {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
-        adapter = new NewDishAdapter(list, context);
+        adapter = new NewGoodAdapter(list, context);
         recyclerView.setAdapter(adapter);
         queryNewDish();
     }

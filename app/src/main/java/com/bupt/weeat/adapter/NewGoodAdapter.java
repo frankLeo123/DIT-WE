@@ -18,12 +18,12 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
-public class NewDishAdapter extends RecyclerView.Adapter<NewDishAdapter.ViewHolder> {
+public class NewGoodAdapter extends RecyclerView.Adapter<NewGoodAdapter.ViewHolder> {
     private ArrayList<DishBean> list;
     private Context mContext;
 
 
-    public NewDishAdapter(ArrayList<DishBean> list, Context mContext) {
+    public NewGoodAdapter(ArrayList<DishBean> list, Context mContext) {
         this.list = list;
         this.mContext = mContext;
 
