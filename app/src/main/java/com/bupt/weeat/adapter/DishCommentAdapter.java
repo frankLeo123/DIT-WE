@@ -43,7 +43,7 @@ public class DishCommentAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.dish_comment_adapter_layout, parent, false);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.good_comment_adapter_layout, parent, false);
             holder = new ViewHolder();
             holder.authorName = (TextView) convertView.findViewById(R.id.dish_comment_author_name);
             holder.commentContent = (TextView) convertView.findViewById(R.id.dish_comment_content_tv);

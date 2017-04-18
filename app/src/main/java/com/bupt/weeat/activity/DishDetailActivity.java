@@ -75,7 +75,7 @@ public class DishDetailActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public int getLayoutId() {
-        return R.layout.dish_detail_layout;
+        return R.layout.good_detail_layout;
     }
 
 

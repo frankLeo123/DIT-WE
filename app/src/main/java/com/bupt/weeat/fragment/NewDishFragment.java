@@ -36,7 +36,7 @@ public class NewDishFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.new_dish_layout;
+        return R.layout.new_good_layout;
     }
 
     @Override
