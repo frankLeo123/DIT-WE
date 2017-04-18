@@ -41,6 +41,7 @@ import cn.bmob.v3.listener.UploadFileListener;
 /////////////////////////////////////////////////////////
 //改，侧边栏返回按钮闪退问题
 //侧边栏的个人界面
+//改为默认进入
 ///
 public class UserActivity extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private static final String TAG = UserActivity.class.getSimpleName();

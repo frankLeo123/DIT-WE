@@ -20,7 +20,7 @@
             android:iconifiedByDefault="false"
             android:inputType="textCapWords"
             android:imeOptions="actionSearch"
-            android:queryHint="输入用户名/关键字" />
+            android:queryHint="输入商品名/关键字" />
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView

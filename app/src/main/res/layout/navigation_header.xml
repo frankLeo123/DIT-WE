@@ -9,7 +9,7 @@
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-
+<!--登录之前的头-->
     <com.bupt.weeat.ui.RoundImageView
         android:id="@+id/user_avatar_iv"
         android:layout_width="72dp"

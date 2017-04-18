@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--登录进去后的个人界面-->
     <RelativeLayout
         android:id="@+id/person_image_layout"
         android:layout_width="fill_parent"

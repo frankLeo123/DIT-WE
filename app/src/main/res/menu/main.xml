@@ -4,7 +4,7 @@
     tools:context="com.bupt.weeat.MainActivity">
     <item
         android:id="@+id/actionbar_take_picture"
-        android:icon="@drawable/actionbar_take_picture"
+        android:icon="@drawable/dlut"
         android:title="@string/app_name"
         app:showAsAction="always" />
 </menu>
