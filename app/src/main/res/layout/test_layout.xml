@@ -156,7 +156,6 @@
                     android:layout_centerVertical="true"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="@string/create_post_num"
                     android:textColor="@color/light_grey"
                     android:textSize="14sp" />
 

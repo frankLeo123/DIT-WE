@@ -67,7 +67,7 @@
                 <!--android:id="@+id/user_profile_tabs"-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="48dp"-->
-                <!--android:background="@android:color/white"-->
+                <!--ancreatd_postdroid:background="@android:color/white"-->
                 <!--app:tabGravity="fill"-->
                 <!--app:tabIndicatorColor="@color/primary"-->
                 <!--app:tabIndicatorHeight="4dp"-->
