@@ -22,7 +22,6 @@ public class NewGoodAdapter extends RecyclerView.Adapter<NewGoodAdapter.ViewHold
     private ArrayList<GoodBean> list;
     private Context mContext;
 
-
     public NewGoodAdapter(ArrayList<GoodBean> list, Context mContext) {
         this.list = list;
         this.mContext = mContext;
