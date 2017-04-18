@@ -20,7 +20,7 @@
             android:iconifiedByDefault="false"
             android:inputType="textCapWords"
             android:imeOptions="actionSearch"
-            android:queryHint="输入食堂/菜品" />
+            android:queryHint="输入类别/商品" />
     </android.support.v7.widget.Toolbar>
 
 
