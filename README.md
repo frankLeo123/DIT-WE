@@ -18,7 +18,7 @@ DUT-WE
 用于View和Click事件绑定
 
 [PhotoView](https://github.com/chrisbanes/PhotoView)
-图片放大缩小,滑动
+图片放大缩小,滑动,打开图库后选择照片界面
 
 [kenburnsview](https://github.com/flavioarfaria/KenBurnsView)
 //开头界面图片缓慢偏移的效果

@@ -22,7 +22,7 @@ import com.bupt.weeat.R;
 import com.bupt.weeat.db.SharedPreferencesHelper;
 import com.bupt.weeat.entity.User;
 import com.bupt.weeat.fragment.FindFragment;
-import com.bupt.weeat.fragment.HeathFragment;
+import com.bupt.weeat.fragment.CollectFragment;
 import com.bupt.weeat.fragment.SquareFragment;
 import com.bupt.weeat.ui.CircleTransformation;
 import com.bupt.weeat.ui.RoundImageView;
@@ -310,8 +310,8 @@ public class MainActivity extends BaseActivity {
                 toolbar.setTitle(R.string.drawer_person);
                 break;
             case HEATH_FRAGMENT:
-                fragment = new HeathFragment();
-                toolbar.setTitle(R.string.drawer_heath);
+                fragment = new CollectFragment();
+                toolbar.setTitle(R.string.drawer_collect);
                 drawerPosition = HEATH_FRAGMENT;
                 break;
             case SETTING_ACTIVITY:

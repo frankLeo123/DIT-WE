@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@id/recommendation_dish_name_label"
-                android:text="@string/random_food_name"
+                android:text="@string/random_good_name"
                 android:textColor="@color/light_grey"
                 android:textSize="16sp" />
 

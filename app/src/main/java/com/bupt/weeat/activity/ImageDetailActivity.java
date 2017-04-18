@@ -7,6 +7,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.InjectView;
 import uk.co.senab.photoview.PhotoView;
 
+//打开img后,浏览选择图片界面
 public class ImageDetailActivity extends BaseActivity {
 
 

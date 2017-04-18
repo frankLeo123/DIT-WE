@@ -15,7 +15,7 @@ import com.bupt.weeat.utils.ActivityUtils;
 
 import butterknife.ButterKnife;
 
-
+//框架类
 public abstract class BaseActivity extends AppCompatActivity {
     Context context;
 

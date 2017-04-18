@@ -12,7 +12,7 @@
         <item >@string/drawer_search</item>
         <item >@string/drawer_square</item>
         <item >@string/drawer_person</item>
-        <item >@string/drawer_heath</item>
+        <item >@string/drawer_collect</item>
     </string-array>
     <string-array name="newpro_good_location">
         <item>@string/newpro_good_location1</item>

@@ -12,8 +12,8 @@
     <string name="search_hint">搜索</string>
     <string name="drawer_square">广场</string>
     <string name="drawer_person">个人</string>
-    <string name="drawer_heath">收藏</string>
-    <string name="random_food_name">U盘</string>
+    <string name="drawer_collect">收藏</string>
+    <string name="random_good_name">U盘</string>
     <string name="dianzan_people_num">220点赞</string>
     <string name="food_name_label">商品 ：</string>
     <string name="food_flavor">类别 ：</string>

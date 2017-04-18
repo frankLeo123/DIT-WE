@@ -1,26 +1,23 @@
 package com.bupt.weeat.fragment;
 
 
-import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.bupt.weeat.R;
-import com.bupt.weeat.activity.HeatStatisticsActivity;
-import com.bupt.weeat.activity.RecipeRecommendActivity;
-import com.bupt.weeat.adapter.HealthAdapter;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.LogUtils;
 
 import butterknife.InjectView;
 
-public class HeathFragment extends BaseFragment {
+//收藏界面
+public class CollectFragment extends BaseFragment {
     private static final int HEAT_STATISTICS = 0;
     private static final int RECIPE_RECOMMENDED = 1;
     @InjectView(value = R.id.health_recycler)
     RecyclerView recyclerView;
-    private static final String TAG = HeathFragment.class.getSimpleName();
+    private static final String TAG = CollectFragment.class.getSimpleName();
 
     @Override
     protected int getLayoutId() {
@@ -44,11 +41,11 @@ public class HeathFragment extends BaseFragment {
             public void onItemClick(View view, int position) {
                 if (position == HEAT_STATISTICS) {
                     LogUtils.i(TAG, "onClick");
-                    Intent intent = new Intent(context, HeatStatisticsActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(context, HeatStatisticsActivity.class);
+//                    startActivity(intent);
                 } else if (position == RECIPE_RECOMMENDED) {
-                    Intent intent = new Intent(context, RecipeRecommendActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(context, RecipeRecommendActivity.class);
+//                    startActivity(intent);
                 }
 
             }
