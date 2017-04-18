@@ -36,7 +36,7 @@ import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 
-//发帖功能，没找到相机,是发帖详情界面
+//发帖功能，是广场发贴详情界面,上传用到了Bmob
 public class CreatePostActivity extends BaseActivity implements View.OnClickListener {
     private static final int REQUEST_CODE_ALBUM = 1;
     private static final int REQUEST_CODE_CAMERA = 2;
@@ -226,6 +226,7 @@ public class CreatePostActivity extends BaseActivity implements View.OnClickList
 
     }
 
+    //bmob
     public void publishPost(final String commentContent) {
         final BmobFile imageFile = new BmobFile(new File(imageUri));
 
