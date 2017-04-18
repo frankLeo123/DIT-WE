@@ -20,7 +20,7 @@ import com.bupt.weeat.R;
 import com.bupt.weeat.adapter.GoodCommentAdapter;
 import com.bupt.weeat.entity.Comment;
 import com.bupt.weeat.entity.User;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.ui.SendCommentButton;
 import com.bupt.weeat.utils.LogUtils;
 import com.bupt.weeat.utils.ToastUtils;
@@ -71,7 +71,7 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     private ArrayList<Comment> list;
 
     private GoodCommentAdapter adapter;
-    private DishBean dishObject;
+    private GoodBean dishObject;
 
     @Override
     public int getLayoutId() {
@@ -89,11 +89,11 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         LogUtils.i(TAG, "DISH_CODE :" + DISH_CODE);
         switch (DISH_CODE) {
             case NEW_DISH_CODE:
-                dishObject = (DishBean) getIntent().getSerializableExtra("new_dish_data");
+                dishObject = (GoodBean) getIntent().getSerializableExtra("new_dish_data");
                 LogUtils.i(TAG, dishObject + "");
                 break;
             case WEEK_DISH_CODE:
-                dishObject = (DishBean) getIntent().getSerializableExtra("week_dish_data");
+                dishObject = (GoodBean) getIntent().getSerializableExtra("week_dish_data");
                 LogUtils.i(TAG, dishObject + "");
                 break;
             default:

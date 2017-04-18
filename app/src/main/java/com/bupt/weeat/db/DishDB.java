@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.Constant;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class DishDB {
         return mDishDB;
     }
 
-    public void saveDishToDataBase(DishBean dishObject, String path) {
+    public void saveDishToDataBase(GoodBean dishObject, String path) {
         if (dishObject != null) {
             ContentValues values = new ContentValues();
             values.put("dish_name", dishObject.getName());
@@ -64,12 +64,12 @@ public class DishDB {
 
     }
 
-    public ArrayList<DishBean> queryDishFromDataBase(String tableName) {
-        ArrayList<DishBean> dish_list = new ArrayList<>();
+    public ArrayList<GoodBean> queryDishFromDataBase(String tableName) {
+        ArrayList<GoodBean> dish_list = new ArrayList<>();
         Cursor cursor = db.query(tableName, null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
-                DishBean obj = new DishBean();
+                GoodBean obj = new GoodBean();
                 obj.setName(cursor.getString(cursor.getColumnIndex("dish_name")));
                 obj.setLocation(cursor.getString(cursor.getColumnIndex("dish_location")));
                 obj.setPraise(cursor.getString(cursor.getColumnIndex("dish_praise")));

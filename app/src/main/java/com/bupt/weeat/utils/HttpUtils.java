@@ -7,10 +7,10 @@ import android.os.Message;
 
 import com.bupt.weeat.Constant;
 import com.bupt.weeat.data.HotRecommendationDishData;
-import com.bupt.weeat.data.NewDishData;
-import com.bupt.weeat.data.WeekDishData;
+import com.bupt.weeat.data.NewGoodData;
+import com.bupt.weeat.data.WeekGoodData;
 import com.bupt.weeat.db.DishDB;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -48,7 +48,7 @@ public class HttpUtils {
                         sb.append(line);
                     }
                     jsonContent = sb.toString();
-                    ArrayList<DishBean> list = new ArrayList<>();
+                    ArrayList<GoodBean> list = new ArrayList<>();
                     //根据模块判断是哪里的信息
                     switch (path) {
                         case Constant.HOT_RECOMMENDATION_URL:
@@ -56,18 +56,18 @@ public class HttpUtils {
                             list = hot_data.parserHotRecommendation(jsonContent);
                             break;
                         case Constant.NEW_DISH_URL:
-                            NewDishData new_data = new NewDishData();
+                            NewGoodData new_data = new NewGoodData();
                             list = new_data.parserNewDish(jsonContent);
                             break;
                         case Constant.WEEK_RANK_URL:
-                            WeekDishData week_data = new WeekDishData();
+                            WeekGoodData week_data = new WeekGoodData();
                             list = week_data.parserWeekDish(jsonContent);
                             break;
                         default:
                             break;
                     }
                     mDishDB = DishDB.getInstance(mContext);
-                    for (DishBean dishObject : list) {
+                    for (GoodBean dishObject : list) {
                         mDishDB.saveDishToDataBase(dishObject, path);
                     }
                     if (mHandler != null && list != null) {

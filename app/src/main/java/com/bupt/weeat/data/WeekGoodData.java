@@ -1,6 +1,6 @@
 package com.bupt.weeat.data;
 
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -8,9 +8,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class WeekDishData {
-    public ArrayList<DishBean> parserWeekDish(String jsonContent) {
-        ArrayList<DishBean> WeekDish_list = null;
+public class WeekGoodData {
+    public ArrayList<GoodBean> parserWeekDish(String jsonContent) {
+        ArrayList<GoodBean> WeekDish_list = null;
         try {
             JSONObject json = new JSONObject(jsonContent);
             int code = json.getInt("errno");
@@ -20,7 +20,7 @@ public class WeekDishData {
                 JSONArray dishArray = data.getJSONArray("dishes");
                 JSONArray windowArray = data.getJSONArray("windows");
                 for (int i = 0; i < dishArray.length(); i++) {
-                  final DishBean dishObj = new DishBean();
+                  final GoodBean dishObj = new GoodBean();
                     JSONObject dish = dishArray.getJSONObject(i);
                     dishObj.setId(dish.getString("id"));
                     dishObj.setName(dish.getString("name"));

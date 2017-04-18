@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bupt.weeat.R;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ import butterknife.InjectView;
 
 
 public class NewGoodAdapter extends RecyclerView.Adapter<NewGoodAdapter.ViewHolder> {
-    private ArrayList<DishBean> list;
+    private ArrayList<GoodBean> list;
     private Context mContext;
 
 
-    public NewGoodAdapter(ArrayList<DishBean> list, Context mContext) {
+    public NewGoodAdapter(ArrayList<GoodBean> list, Context mContext) {
         this.list = list;
         this.mContext = mContext;
 

@@ -1,6 +1,6 @@
 package com.bupt.weeat.data;
 
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -9,10 +9,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 //数据吧，一时没看懂
-public class NewDishData {
+public class NewGoodData {
 
-    public ArrayList<DishBean> parserNewDish(String jsonContent) {
-        ArrayList<DishBean> NewDish_list = null;
+    public ArrayList<GoodBean> parserNewDish(String jsonContent) {
+        ArrayList<GoodBean> NewDish_list = null;
         try {
             JSONObject json = new JSONObject(jsonContent);
             int code = json.getInt("errno");
@@ -21,7 +21,7 @@ public class NewDishData {
                 JSONObject data = json.getJSONObject("data");
                 JSONArray dishArray = data.getJSONArray("New_dishes");
                 for (int i = 0; i < dishArray.length(); i++) {
-                    final DishBean dishObj = new DishBean();
+                    final GoodBean dishObj = new GoodBean();
                     JSONObject dish = dishArray.getJSONObject(i);
                     dishObj.setId(dish.getString("id"));
                     dishObj.setName(dish.getString("name"));

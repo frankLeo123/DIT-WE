@@ -10,19 +10,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bupt.weeat.R;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class WeekRankAdapter extends RecyclerView.Adapter<WeekRankAdapter.ViewHolder> {
     private Context mContext;
-    private ArrayList<DishBean> list;
+    private ArrayList<GoodBean> list;
 
 
     private static final String TAG = WeekRankAdapter.class.getSimpleName();
 
-    public WeekRankAdapter(Context mContext, ArrayList<DishBean> list) {
+    public WeekRankAdapter(Context mContext, ArrayList<GoodBean> list) {
         this.mContext = mContext;
         this.list = list;
 

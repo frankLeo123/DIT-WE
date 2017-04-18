@@ -1,7 +1,7 @@
 package com.bupt.weeat.entity;
 
 
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 
 import cn.bmob.v3.BmobObject;
 
@@ -9,7 +9,7 @@ public class Comment extends BmobObject {
     private User user;
     private String commentContent;
     private Post post;
-    private DishBean dishObject;
+    private GoodBean dishObject;
 
     public Post getPost() {
         return post;
@@ -19,11 +19,11 @@ public class Comment extends BmobObject {
         this.post = post;
     }
 
-    public DishBean getDishObject() {
+    public GoodBean getDishObject() {
         return dishObject;
     }
 
-    public void setDishObject(DishBean dishObject) {
+    public void setDishObject(GoodBean dishObject) {
         this.dishObject = dishObject;
     }
 

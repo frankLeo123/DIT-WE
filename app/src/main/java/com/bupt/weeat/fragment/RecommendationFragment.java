@@ -21,7 +21,7 @@ import com.bupt.weeat.Constant;
 import com.bupt.weeat.R;
 import com.bupt.weeat.activity.ImageDetailActivity;
 import com.bupt.weeat.db.DishDB;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.utils.HttpUtils;
 import com.bupt.weeat.utils.LogUtils;
 import com.squareup.picasso.Picasso;
@@ -40,7 +40,7 @@ public class RecommendationFragment extends Fragment implements View.OnClickList
     private TextView dishLocation;
     private ImageView dishPraiseImage;
     private Context mContext;
-    private ArrayList<DishBean> list;
+    private ArrayList<GoodBean> list;
     private Handler mHandler;
     private static final String TAG = RecommendationFragment.class.getSimpleName();
     private static final AccelerateInterpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
@@ -95,7 +95,7 @@ public class RecommendationFragment extends Fragment implements View.OnClickList
             if (mTarget.get() != null) {
                 switch (msg.what) {
                     case 0x01:
-                        ArrayList<DishBean> dish_list = (ArrayList<DishBean>) msg.obj;
+                        ArrayList<GoodBean> dish_list = (ArrayList<GoodBean>) msg.obj;
                         list.addAll(dish_list);
                         initView(list);
                         break;
@@ -108,7 +108,7 @@ public class RecommendationFragment extends Fragment implements View.OnClickList
 
     private void queryRecommendationDish() {
         DishDB mDishDB = DishDB.getInstance(mContext);
-        ArrayList<DishBean> dish_list = mDishDB.queryDishFromDataBase("RecommendationDish");
+        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("RecommendationDish");
         if (dish_list.size() > 0) {
             list.addAll(dish_list);
             initView(list);
@@ -186,7 +186,7 @@ public class RecommendationFragment extends Fragment implements View.OnClickList
         set.start();
     }
 
-    private void initView(ArrayList<DishBean> list) {
+    private void initView(ArrayList<GoodBean> list) {
         try {
             imageUrl = list.get(0).getImageUrl();
             if (!imageUrl.isEmpty()) {

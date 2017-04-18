@@ -14,7 +14,7 @@ import com.bupt.weeat.R;
 import com.bupt.weeat.activity.GoodDetailActivity;
 import com.bupt.weeat.adapter.NewGoodAdapter;
 import com.bupt.weeat.db.DishDB;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.HttpUtils;
 import com.bupt.weeat.utils.LogUtils;
@@ -29,7 +29,7 @@ public class NewGoodFragment extends BaseFragment {
     @InjectView(value = R.id.new_dish_recycler)
     RecyclerView recyclerView;
     private static final int NEW_DISH_CODE = 0;
-    private ArrayList<DishBean> list;
+    private ArrayList<GoodBean> list;
     private static final String TAG = NewGoodFragment.class.getSimpleName();
     private NewGoodAdapter adapter;
     private Handler mHandler;
@@ -95,7 +95,7 @@ public class NewGoodFragment extends BaseFragment {
             if (mTarget.get() != null) {
                 switch (msg.what) {
                     case 0x01:
-                        ArrayList<DishBean> lists = (ArrayList<DishBean>) msg.obj;
+                        ArrayList<GoodBean> lists = (ArrayList<GoodBean>) msg.obj;
                         list.addAll(lists);
                         adapter.notifyDataSetChanged();
                         LogUtils.i(TAG, "list size: " + list.size());
@@ -111,7 +111,7 @@ public class NewGoodFragment extends BaseFragment {
 
     private void queryNewDish() {
         DishDB mDishDB = DishDB.getInstance(context);
-        ArrayList<DishBean> dish_list = mDishDB.queryDishFromDataBase("NewDish");
+        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("NewDish");
         if (dish_list.size() > 0) {
             LogUtils.i(TAG, "query from database");
             list.addAll(dish_list);

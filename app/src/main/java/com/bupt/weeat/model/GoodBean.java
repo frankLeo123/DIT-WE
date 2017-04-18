@@ -8,7 +8,7 @@ import cn.bmob.v3.datatype.BmobRelation;
 
 
 //可能定义了bean组件
-public class DishBean extends BmobObject implements Serializable {
+public class GoodBean extends BmobObject implements Serializable {
     private String Name;
     private String Location;
     private int ImageId;
@@ -23,13 +23,13 @@ public class DishBean extends BmobObject implements Serializable {
     private String windowUrl;
     private String updateTime;
     private BmobRelation relation;
-    private List<DishBean> data;
+    private List<GoodBean> data;
 
-    public List<DishBean> getData() {
+    public List<GoodBean> getData() {
         return data;
     }
 
-    public void setData(List<DishBean> data) {
+    public void setData(List<GoodBean> data) {
         this.data = data;
     }
 
@@ -124,19 +124,19 @@ public class DishBean extends BmobObject implements Serializable {
     }
 
 
-    public DishBean(String name, String location, int imageId) {
+    public GoodBean(String name, String location, int imageId) {
         super();
         Name = name;
         Location = location;
         ImageId = imageId;
     }
 
-    public DishBean(String name, int imageId) {
+    public GoodBean(String name, int imageId) {
         Name = name;
         ImageId = imageId;
     }
 
-    public DishBean() {
+    public GoodBean() {
 
     }
 
@@ -165,7 +165,7 @@ public class DishBean extends BmobObject implements Serializable {
     }
 
     public String toString() {
-        return "this is DishBean";
+        return "this is GoodBean";
     }
 
 }

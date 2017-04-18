@@ -17,7 +17,7 @@ import com.bupt.weeat.R;
 import com.bupt.weeat.activity.GoodDetailActivity;
 import com.bupt.weeat.adapter.WeekRankAdapter;
 import com.bupt.weeat.db.DishDB;
-import com.bupt.weeat.model.DishBean;
+import com.bupt.weeat.model.GoodBean;
 import com.bupt.weeat.ui.RecyclerItemClickListener;
 import com.bupt.weeat.utils.HttpUtils;
 import com.bupt.weeat.utils.LogUtils;
@@ -32,7 +32,7 @@ import butterknife.InjectView;
 public class WeekRankFragment extends BaseFragment {
     @InjectView(R.id.week_rank_recycler)
     RecyclerView recyclerView;
-    private ArrayList<DishBean> list;
+    private ArrayList<GoodBean> list;
 
 
     private static final int WEEK_DISH_CODE = 1;
@@ -60,9 +60,9 @@ public class WeekRankFragment extends BaseFragment {
     }
 
     public void getData() {
-        final JsonRequest<DishBean> request = new JsonRequest<>(Request.Method.GET, Constant.WEEK_RANK_URL, DishBean.class, new Response.Listener<DishBean>() {
+        final JsonRequest<GoodBean> request = new JsonRequest<>(Request.Method.GET, Constant.WEEK_RANK_URL, GoodBean.class, new Response.Listener<GoodBean>() {
             @Override
-            public void onResponse(DishBean response) {
+            public void onResponse(GoodBean response) {
                 try {
                     list.clear();
                     list.addAll(response.getData());
@@ -129,7 +129,7 @@ public class WeekRankFragment extends BaseFragment {
             if (mTarget.get() != null) {
                 switch (msg.what) {
                     case 0x01:
-                        ArrayList<DishBean> lists = (ArrayList<DishBean>) msg.obj;
+                        ArrayList<GoodBean> lists = (ArrayList<GoodBean>) msg.obj;
                         list.addAll(lists);
                         adapter.notifyDataSetChanged();
                         break;
@@ -143,7 +143,7 @@ public class WeekRankFragment extends BaseFragment {
 
    private void queryNewDish() {
         mDishDB = DishDB.getInstance(context);
-        ArrayList<DishBean> dish_list = mDishDB.queryDishFromDataBase("WeekDish");
+        ArrayList<GoodBean> dish_list = mDishDB.queryDishFromDataBase("WeekDish");
         if (dish_list.size() > 0) {
             LogUtils.i(TAG, "query from database");
             list.addAll(dish_list);
