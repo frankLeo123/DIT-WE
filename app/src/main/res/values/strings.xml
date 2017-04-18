@@ -47,8 +47,9 @@
     <string name="yes">是</string>
     <string name="no">否</string>
     <string name="clear_picture_cache">清除图片缓存</string>
-    <string name="create_post_num">发帖数</string>
-
+    <!--<string name="constact">联系方式</string>-->
+    <string name="test_constact">18840823550</string>
+    <string name="test_name">马俊辉</string>
     <string name="cancellation">注 销</string>
     <string name="food">商 品</string>
     <string name="shuixingge">马俊辉</string>

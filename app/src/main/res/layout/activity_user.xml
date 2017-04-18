@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+<!--取消了滚动界面-->
     <android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,25 +63,25 @@
                     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
             </android.support.design.widget.CollapsingToolbarLayout>
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/user_profile_tabs"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@android:color/white"
-                app:tabGravity="fill"
-                app:tabIndicatorColor="@color/primary"
-                app:tabIndicatorHeight="4dp"
-                app:tabMode="fixed" />
+            <!--<android.support.design.widget.TabLayout-->
+                <!--android:id="@+id/user_profile_tabs"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:background="@android:color/white"-->
+                <!--app:tabGravity="fill"-->
+                <!--app:tabIndicatorColor="@color/primary"-->
+                <!--app:tabIndicatorHeight="4dp"-->
+                <!--app:tabMode="fixed" />-->
 
 
         </android.support.design.widget.AppBarLayout>
 
 
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!--<android.support.v4.widget.NestedScrollView-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fillViewport="true"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -111,6 +111,7 @@
                         android:id="@+id/user_activity_avatar_iv"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:src="@drawable/tou_xiang"
                         android:layout_alignParentEnd="true"
                         android:contentDescription="@string/hello_world" />
                 </RelativeLayout>
@@ -145,6 +146,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:paddingEnd="10dp"
+                        android:text="@string/test_name"
                         android:paddingStart="10dp" />
                 </RelativeLayout>
 
@@ -205,7 +207,7 @@
                         android:layout_centerVertical="true"
                         android:paddingEnd="10dp"
                         android:paddingStart="10dp"
-                        android:text="@string/create_post_num"
+                        android:text="@string/contact"
                         android:textColor="@color/light_grey"
                         android:textSize="14sp" />
 
@@ -216,6 +218,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:paddingEnd="10dp"
+                        android:text="@string/test_constact"
                         android:paddingStart="10dp" />
                 </RelativeLayout>
                 <View
@@ -236,6 +239,6 @@
                     android:text="@string/cancellation"
                     android:textColor="@color/light_gray" />
             </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
+        <!--</android.support.v4.widget.NestedScrollView>-->
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

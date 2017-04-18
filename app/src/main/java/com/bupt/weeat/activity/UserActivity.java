@@ -40,6 +40,7 @@ import cn.bmob.v3.listener.UploadFileListener;
 
 /////////////////////////////////////////////////////////
 //改，侧边栏返回按钮闪退问题
+//侧边栏的个人界面
 ///
 public class UserActivity extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private static final String TAG = UserActivity.class.getSimpleName();
@@ -62,8 +63,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
     Switch genderSwitch;
     @InjectView(R.id.logout)
     Button logout;
-    @InjectView(R.id.user_profile_tabs)
-    TabLayout tabLayout;
+//    @InjectView(R.id.user_profile_tabs)
+//    TabLayout tabLayout;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.user_collapsingToolbarLayout)
@@ -107,9 +108,9 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
 
     private void initPersonalInfo() {
         LogUtils.i(TAG, "initPersonalInfo()");
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.
-                ic_drawer_person).setText("个人"));
-        tabLayout.addTab(tabLayout.newTab().setText("消息").setIcon(R.drawable.ic_message));
+//        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.
+//                ic_drawer_person).setText("个人"));
+//        tabLayout.addTab(tabLayout.newTab().setText("消息").setIcon(R.drawable.ic_message));
         if (user != null) {
             LogUtils.i(TAG, user.getUsername() + "");
             userName.setText(user.getUsername());
@@ -192,6 +193,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
                     if (data != null) {
                         Uri originalUri = data.getData();
                         String avatarUrl = getRealPathFromUri(originalUri);
+//                        图片缓存
                         Picasso.with(this)
                                 .load(Uri.parse("file://" + avatarUrl))
                                 .centerCrop()
@@ -239,7 +241,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     public String getRealPathFromUri(Uri contentUri) {
-
+//游标
         String[] projection = {MediaStore.Images.Media.DATA};
         Cursor cursor = this.getContentResolver().query(contentUri, projection, null, null, null);
         int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
@@ -248,7 +250,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
         cursor.close();
         return realPath;
     }
-
+//性别
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         switch (buttonView.getId()) {
