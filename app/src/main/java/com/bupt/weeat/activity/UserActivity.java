@@ -303,8 +303,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
         if (user != null) {
             return true;
         }
-        return true;
-//        return false;
+//        return true;
+        return false;
     }
 
     @Override

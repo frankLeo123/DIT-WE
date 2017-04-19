@@ -233,20 +233,20 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         LogUtils.i(TAG, " onLoginSuccess()");
         ToastUtils.showToast(this, R.string.login_success, Toast.LENGTH_SHORT);
         loginProgress.setVisibility(View.VISIBLE);
-        //User user = BmobUser.getCurrentUser(context, User.class);
+        User user = BmobUser.getCurrentUser(context, User.class);
 //        User user=new User();
-//        user.setSex(Constant.MALE_SEX);
-//        user.update(getApplicationContext(), new UpdateListener() {
-//            @Override
-//            public void onSuccess() {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(int i, String s) {
-//
-//            }
-//        });
+        user.setSex(Constant.MALE_SEX);
+        user.update(getApplicationContext(), new UpdateListener() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+
+            }
+        });
         Intent intent = new Intent();
         setResult(2, intent);
         finish();

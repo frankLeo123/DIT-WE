@@ -343,8 +343,8 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         if (user != null) {
             return true;
         }
-//        return false;
-        return true;
+        return false;
+//        return true;
     }
 
     private void hideSoftKeyBoard() {

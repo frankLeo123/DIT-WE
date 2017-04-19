@@ -214,8 +214,8 @@ public class MainActivity extends BaseActivity {
         if (user != null) {
             return true;
         }
-//        return false;
-        return true;
+        return false;
+//        return true;
     }
 
     @Override

@@ -29,12 +29,12 @@ public class UserUtils  {
             }
 
             @Override
-//            public void onFailure(int i, String s) {
-//                 mSignUpListener.onSignUpFailure(s);
-//            }
             public void onFailure(int i, String s) {
-                 mSignUpListener.onSignUpSuccess();
+                 mSignUpListener.onSignUpFailure(s);
             }
+//            public void onFailure(int i, String s) {
+//                 mSignUpListener.onSignUpSuccess();
+//            }
         });
     }
     private SignUpListener mSignUpListener;
@@ -61,12 +61,12 @@ public class UserUtils  {
             //搞一波
             ////////////////////////////////////////////////////////////////////////////////////
             @Override
-//            public void onFailure(int i, String s) {
-//                mLoginListener.onLoginFailure(s);
-//            }
             public void onFailure(int i, String s) {
-                mLoginListener.onLoginSuccess();
+                mLoginListener.onLoginFailure(s);
             }
+//            public void onFailure(int i, String s) {
+//                mLoginListener.onLoginSuccess();
+//            }
         });
 
     }
