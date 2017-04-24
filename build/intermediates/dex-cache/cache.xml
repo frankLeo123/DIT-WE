@@ -2,158 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-caf68c2113c8db305c118b5540b1db7dc237845f.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-3f1e98ab4f5da5424ef059c3c2717b27ab483244.jar" />
-    </item>
-    <item
-        jar="/home/frank/Soft/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-7066bef9559f85e0c83c68cb1d8956ab8fb3c2b1.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/libs/fastjson-1.1.33.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="43b49a6933e68564ddc291d941db1bd1bd4166fc">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/fastjson-1.1.33-5127d1b6d70a740d210250433f01c5d2055b7b31.jar" />
-    </item>
-    <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.flaviofaria/kenburnsview/1.0.6/65dcd9c03096b73f4740d63cf93d30a692fe52b5/kenburnsview-1.0.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="65dcd9c03096b73f4740d63cf93d30a692fe52b5">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/kenburnsview-1.0.6-2c5df67bc76f35b2affd7dacfaf7d079735059bf.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/DUT-WE/app/libs/fastjson-1.1.33.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="43b49a6933e68564ddc291d941db1bd1bd4166fc">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/fastjson-1.1.33-b2e69adc99bfb8ebe093539be84a7c8fea4b2dd9.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/libs/Bmob_Push_V0.6beta_20150408.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="db21ec99c2c7bf91c67bf80f5c5c49a92dd0562e">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/Bmob_Push_V0.6beta_20150408-f1f97deb7d34f16897c0af6aabd81d2197f67184.jar" />
-    </item>
-    <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.3.1/6904771474c058abfc5912c13d12b02754712165/leakcanary-watcher-1.3.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6904771474c058abfc5912c13d12b02754712165">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/leakcanary-watcher-1.3.1-a9d1c9c187a76016cbeeb869edd3d5577d87138d.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-a6670232527f3c14da4f7b0421c1da5095b2464d.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-1d07653a5cfda1af902b44b2984a06c0b010a397.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-5a0d53ec1f5819cbe0205ab63855f7ce34766502.jar" />
-    </item>
-    <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/butterknife-6.1.0-c40eebb78dccf6d3e4fc34246e9058b9ed5ad7dd.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.3.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9066b6d4e2536b49e3b58aa301fd925247032df0">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-a7ab011d34480b6cdb1890cadd8c3f24a966b658.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-559559b6ccf573b3bea2b1ea8d8db70bcb6423a4.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-5638c9c437d31c499855ddf47a847af28e32aa66.jar" />
-    </item>
-    <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/1.3/d2c832f9d14a11c79f58a7ee2e10526a12152c72/haha-1.3.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d2c832f9d14a11c79f58a7ee2e10526a12152c72">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/haha-1.3-cbd11c98366ef677aad6efd1d6f16918250ffac4.jar" />
-    </item>
-    <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.0/7ff0e000d1e27e356567f56c92af3b8ab912636f/picasso-2.5.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/picasso-2.5.0-992681b5117c518a4b55efcab818654cfa59af84.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/DUT-WE/app/libs/Bmob_Push_V0.6beta_20150408.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="db21ec99c2c7bf91c67bf80f5c5c49a92dd0562e">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/Bmob_Push_V0.6beta_20150408-be8677b7ffd89079ff1575e698f9855bfcd09eb8.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-7ffcd3f27749a6f5c536ea6c04195928e08286e3.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/libs/BmobSDK_V3.3.8_0521.jar"
+        jar="/home/frank/文档/DUT-WE/app/libs/BmobSDK_V3.3.8_0521.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="a991baf2a064ffd374bfc20ae147c4b325ea9a71">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/BmobSDK_V3.3.8_0521-03f220dd35b049d8975c43c53503f887ec507c95.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/libs/Volley.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/Volley-dce0bb4840f3ef8eb7f6180f31d8a57c85fcdd73.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-9d4a55150e85dc84a891cf811ed56d5eafd31386.jar" />
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/BmobSDK_V3.3.8_0521-10f7c38b4ff6bebf5c572895d3a4b6386c3a53bb.jar" />
     </item>
     <item
         jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/jars/classes.jar"
@@ -163,32 +16,32 @@
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-28504be858f5749912cf4ff223d45a6199d87d0a.jar" />
     </item>
     <item
-        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jar="/home/frank/Soft/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-b65e336cda56db3bf4a849d0330ec46e3bf1d1c1.jar" />
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-407cb25667b3a25366997fed8aa6638d52aef24a.jar" />
     </item>
     <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.0/a7537446a030da8eb0da4c71424d16c2589f6c4a/glide-3.6.0.jar"
+        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="a7537446a030da8eb0da4c71424d16c2589f6c4a">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/glide-3.6.0-e1d02e12815f40f0d13ac5e7f889cf413715f3ef.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-caf68c2113c8db305c118b5540b1db7dc237845f.jar" />
     </item>
     <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.github.chrisbanes.photoview/library/1.2.2/82eda228c92c1aab3c0c8626497f13baf249cdb4/library-1.2.2.jar"
+        jar="/home/frank/文档/DUT-WE/app/libs/fastjson-1.1.33.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="82eda228c92c1aab3c0c8626497f13baf249cdb4">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/library-1.2.2-eb001c4e5d4a003b79bdd661d343e8e31af9df2f.jar" />
+        sha1="43b49a6933e68564ddc291d941db1bd1bd4166fc">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/fastjson-1.1.33-b2e69adc99bfb8ebe093539be84a7c8fea4b2dd9.jar" />
     </item>
     <item
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.3.1/325e7401a7ea16918eb39ba8baad8fd5561a55d3/leakcanary-analyzer-1.3.1.jar"
+        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="325e7401a7ea16918eb39ba8baad8fd5561a55d3">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/leakcanary-analyzer-1.3.1-a08967f3aefd2079557324d1601dc0357bb9ad07.jar" />
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-5638c9c437d31c499855ddf47a847af28e32aa66.jar" />
     </item>
     <item
         jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.3.1/jars/classes.jar"
@@ -196,6 +49,34 @@
         revision="22.0.1"
         sha1="9066b6d4e2536b49e3b58aa301fd925247032df0">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-23fc6f70993eb9ebb7754cf4e02d649785da73fa.jar" />
+    </item>
+    <item
+        jar="/home/frank/文档/DUT-WE/app/libs/Bmob_Push_V0.6beta_20150408.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="db21ec99c2c7bf91c67bf80f5c5c49a92dd0562e">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/Bmob_Push_V0.6beta_20150408-be8677b7ffd89079ff1575e698f9855bfcd09eb8.jar" />
+    </item>
+    <item
+        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-fa65a5ebec2caefdd1e456c94fe43f5895f4a0a8.jar" />
+    </item>
+    <item
+        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-b65e336cda56db3bf4a849d0330ec46e3bf1d1c1.jar" />
+    </item>
+    <item
+        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-a6670232527f3c14da4f7b0421c1da5095b2464d.jar" />
     </item>
     <item
         jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.3.0/jars/classes.jar"
@@ -210,27 +91,6 @@
         revision="22.0.1"
         sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/Volley-5de08fc9ce185881ab0cda39301e3b98acb10624.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/DUT-WE/app/libs/BmobSDK_V3.3.8_0521.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a991baf2a064ffd374bfc20ae147c4b325ea9a71">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/BmobSDK_V3.3.8_0521-10f7c38b4ff6bebf5c572895d3a4b6386c3a53bb.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/Need/WeEat/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="/home/frank/文档/Need/WeEat/app/build/intermediates/pre-dexed/debug/classes-444004f23a3d7f6a5ee9ff85a250fe2e5db389b5.jar" />
-    </item>
-    <item
-        jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/pre-dexed/debug/classes-fa65a5ebec2caefdd1e456c94fe43f5895f4a0a8.jar" />
     </item>
 
 </items>
