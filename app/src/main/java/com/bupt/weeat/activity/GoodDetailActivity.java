@@ -180,8 +180,8 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         dishName.setText(dishObject.getName());
         dishPrice.setText(dishObject.getPrice() + "元");
         dishTaste.setText(dishObject.getFlavor());
-        dishWindow.setText(dishObject.getWindowName());
-        LogUtils.i(TAG, dishObject.getWindowName() + "dishObject.getWindowName()");
+        dishWindow.setText(dishObject.getGradeName());
+        LogUtils.i(TAG, dishObject.getGradeName() + "dishObject.getWindowName()");
         dishPraise.setText(dishObject.getPraise());
     }
 

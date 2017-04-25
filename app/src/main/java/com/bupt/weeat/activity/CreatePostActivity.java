@@ -226,7 +226,7 @@ public class CreatePostActivity extends BaseActivity implements View.OnClickList
 
     }
 
-    //bmob
+    //bmob传图
     public void publishPost(final String commentContent) {
         final BmobFile imageFile = new BmobFile(new File(imageUri));
 

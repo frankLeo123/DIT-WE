@@ -38,7 +38,7 @@ public class GoodDB {
             values.put("dish_price", dishObject.getPrice());
             values.put("dish_heat", dishObject.getHeat());
             values.put("dish_windowId", dishObject.getWindowId());
-            values.put("dish_windowName", dishObject.getWindowName());
+            values.put("dish_windowName", dishObject.getGradeName());
             values.put("dish_imageUrl", dishObject.getImageUrl());
             try {
                 values.put("dish_updateTime", dishObject.getUpdateTime());
@@ -73,7 +73,7 @@ public class GoodDB {
                 obj.setName(cursor.getString(cursor.getColumnIndex("dish_name")));
                 obj.setLocation(cursor.getString(cursor.getColumnIndex("dish_location")));
                 obj.setPraise(cursor.getString(cursor.getColumnIndex("dish_praise")));
-                obj.setWindowName(cursor.getString(cursor.getColumnIndex("dish_windowName")));
+                obj.setGradeName(cursor.getString(cursor.getColumnIndex("dish_windowName")));
                 obj.setFlavor(cursor.getString(cursor.getColumnIndex("dish_flavor")));
                 obj.setWindowId(cursor.getString(cursor.getColumnIndex("dish_windowId")));
                 obj.setHeat(cursor.getString(cursor.getColumnIndex("dish_heat")));

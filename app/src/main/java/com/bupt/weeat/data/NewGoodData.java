@@ -37,7 +37,7 @@ public class NewGoodData {
                     dishObj.setImageUrl(imageUrl);
                     JSONObject windowCover = goods.getJSONObject("Dish_Window");
                     dishObj.setWindowId(windowCover.getString("id"));
-                    dishObj.setWindowName(
+                    dishObj.setGradeName(
                             windowCover.getString("name")
                     );
                     dishObj.setLocation(windowCover.getString("location"));

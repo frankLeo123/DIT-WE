@@ -19,7 +19,7 @@ public class GoodBean extends BmobObject implements Serializable {
     private String price;
     private String flavor;
     private String windowId;
-    private String windowName;
+    private String gradeName;
     private String windowUrl;
     private String updateTime;
     private BmobRelation relation;
@@ -57,13 +57,13 @@ public class GoodBean extends BmobObject implements Serializable {
         this.windowUrl = windowUrl;
     }
 
-    public String getWindowName() {
+    public String getGradeName() {
 
-        return windowName;
+        return gradeName;
     }
 
-    public void setWindowName(String windowName) {
-        this.windowName = windowName;
+    public void setGradeName(String gradeName) {
+        this.gradeName = gradeName;
     }
 
     public String getWindowId() {

@@ -33,7 +33,7 @@ public class WeekGoodData {
                     dishObj.setImageUrl(imageUrl);
                     JSONObject window = windowArray.getJSONObject(i);
                     dishObj.setWindowId(window.getString("id"));
-                    dishObj.setWindowName(window.getString("name"));
+                    dishObj.setGradeName(window.getString("name"));
                     dishObj.setLocation(window.getString("location"));
                     JSONObject windowCover = window.getJSONObject("Window_Cover");
                     String windowUrl = windowCover.getString("path");
