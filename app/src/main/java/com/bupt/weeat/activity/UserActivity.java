@@ -92,8 +92,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-//                BmobFile imageFile = user.getUserImage();
-//                LogUtils.i(TAG, "onClick" + imageFile.getFileUrl(UserActivity.this));
+                BmobFile imageFile = user.getUserImage();
+                LogUtils.i(TAG, "onClick" + imageFile.getFileUrl(UserActivity.this));
                 setResult(RESULT_CODE__USER, intent);
                 finish();
 

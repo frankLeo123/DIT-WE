@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.bupt.weeat.Constant;
-import com.bupt.weeat.data.HotRecommendationDishData;
+import com.bupt.weeat.data.HotRecommendationGoodData;
 import com.bupt.weeat.data.NewGoodData;
 import com.bupt.weeat.data.WeekGoodData;
 import com.bupt.weeat.db.GoodDB;
@@ -52,7 +52,7 @@ public class HttpUtils {
                     //根据模块判断是哪里的信息
                     switch (path) {
                         case Constant.HOT_RECOMMENDATION_URL:
-                            HotRecommendationDishData hot_data = new HotRecommendationDishData();
+                            HotRecommendationGoodData hot_data = new HotRecommendationGoodData();
                             list = hot_data.parserHotRecommendation(jsonContent);
                             break;
                         case Constant.NEW_GOOD_URL:

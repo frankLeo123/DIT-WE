@@ -181,8 +181,8 @@ public class SquareFragment extends BaseFragment implements PostListAdapter.OnFe
         if (user != null) {
             return true;
         }
-//        return false;
-        return true;
+        return false;
+//        return true;
     }
 
     public void showSnackbar() {
