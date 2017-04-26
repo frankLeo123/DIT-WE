@@ -12,7 +12,7 @@
     <string name="search_hint">搜索</string>
     <string name="drawer_square">广场</string>
     <string name="drawer_person">个人</string>
-    <string name="drawer_collect">收藏</string>
+    <string name="drawer_collect">开眼</string>
     <string name="random_good_name">U盘</string>
     <string name="dianzan_people_num">220点赞</string>
     <string name="food_name_label">商品 ：</string>
@@ -53,7 +53,7 @@
     <string name="cancellation">注 销</string>
     <string name="food">商 品</string>
     <string name="shuixingge">马俊辉</string>
-    <string name="user_commit_date">2015-06-03</string>
+    <string name="user_commit_date">2017-04-03</string>
     <string name="figure">100</string>
     <string name="user_login_mail">邮箱</string>
     <string name="user_login_name">用户名</string>
@@ -125,7 +125,7 @@
     <string name="post_content">记一次android登陆页面的实现记一次android登陆页面的实现记一次android登陆页面的实现记一次android登陆页面的实现记一次android登陆页面的实现</string>
     <string name="post_creator_name">只是想改变</string>
     <string name="like_num">123 likes</string>
-    <string name="post_create_time">2014.6.28</string>
+    <string name="post_create_time">2017.6.28</string>
     <string name="check_net">网络连接不可用，请检查您的网络</string>
     <string name="birthplace">诞生地：</string>
     <string name="beijing">大连理工大学</string>

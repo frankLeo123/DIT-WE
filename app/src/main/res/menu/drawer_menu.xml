@@ -21,7 +21,7 @@
         android:title="@string/drawer_person" />
     <item
         android:id="@+id/nav_item_heath"
-        android:icon="@drawable/ic_drawer_heath"
+        android:icon="@drawable/ic_drawer_eyes"
         android:title="@string/drawer_collect" />
     <group android:id="@+id/menu_group_2">
         <item

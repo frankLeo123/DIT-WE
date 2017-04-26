@@ -9,12 +9,12 @@ import com.bupt.weeat.fragment.NewGoodFragment;
 import com.bupt.weeat.fragment.WeekRankFragment;
 
 
-
+//首页的滑动Tab
 public class FindPagerAdapter extends FragmentPagerAdapter {
     private static final int RECOMMENDATION_FRAGMENT = 0;
     private static final int NEW_PRODUCT_FRAGMENT = 1;
     private static final int WEEK_RANK_FRAGMENT = 2;
-    private String[] FindTabArray = { "热门推荐", "新品速递", "每周榜单" };
+    private String[] FindTabArray = { "热门招领", "新鲜速递", "每周榜单" };
 
     public FindPagerAdapter(FragmentManager fm) {
         super(fm);
