@@ -173,17 +173,17 @@ public class MainActivity extends BaseActivity {
 
 
     public void updateUserHeader() {
-        user = BmobUser.getCurrentUser(this, User.class);
+        user = BmobUser.getCurrentUser(User.class);
         LogUtils.i(TAG, user + "updateUserHeader()");
         if (user != null) {
             if (user.getUserImage() != null) {
-                String imageUrl = user.getUserImage().getFileUrl(this);
+                String imageUrl = user.getUserImage().getFileUrl();
 
                 Picasso.with(this)
                         .load(imageUrl)
                         .centerCrop()
                         .resize(avatarSize, avatarSize)
-                        .placeholder(R.drawable.tou_xiang)
+                        .placeholder(R.drawable.tou_xiang)              //加载错误默认图片
                         .transform(new CircleTransformation())
                         .into(navUserAvatar);
             }
@@ -210,7 +210,7 @@ public class MainActivity extends BaseActivity {
 //////////////////////////////////////////////////
     ///再来一波
     public boolean isLogin() {
-        BmobUser user = BmobUser.getCurrentUser(this, User.class);
+        BmobUser user = BmobUser.getCurrentUser( User.class);
         if (user != null) {
             return true;
         }

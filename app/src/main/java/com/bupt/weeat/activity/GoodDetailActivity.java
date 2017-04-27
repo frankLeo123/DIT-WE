@@ -35,6 +35,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobDate;
 import cn.bmob.v3.datatype.BmobPointer;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
@@ -186,13 +187,23 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void uploadDish() {
-        dishObject.save(mContext, new SaveListener() {
+//        dishObject.save(mContext, new SaveListener() {
+//            @Override
+//            public void onSuccess() {
+//            }
+//
+//            @Override
+//            public void onFailure(int i, String s) {
+//            }
+//        });
+        dishObject.save(new SaveListener<String>() {
             @Override
-            public void onSuccess() {
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
+            public void done(String s, BmobException e) {
+                if(e==null){
+//                    toast("添加数据成功，返回objectId为："+objectId);
+                }else{
+//                    toast("创建数据失败：" + e.getMessage());
+                }
             }
         });
     }
@@ -261,7 +272,7 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void publishComment(String commentContent) {
-        User user = BmobUser.getCurrentUser(mContext, User.class);
+        User user = BmobUser.getCurrentUser(User.class);
 //        LogUtils.i(TAG, user.getUsername());
         LogUtils.i(TAG, "马俊辉");
         final Comment comment = new Comment();
@@ -269,29 +280,50 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         comment.setUser(user);
         comment.setCommentContent(commentContent);
         comment.setDishObject(dishObject);
-        comment.save(mContext, new SaveListener() {
+//        comment.save(mContext, new SaveListener() {
+//            @Override
+//            public void onSuccess() {
+//                ToastUtils.showToast(GoodDetailActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
+//                list.add(comment);
+//                adapter.notifyDataSetChanged();
+//                setListViewHeightBasedOnChildren(commentLv);
+//                dishCommentEt.setText("");
+//                dishObject.update(GoodDetailActivity.this, new UpdateListener() {
+//                    @Override
+//                    public void onSuccess() {
+//                    }
+//
+//                    @Override
+//                    public void onFailure(int i, String s) {
+//
+//                    }
+//                });
+//            }
+//
+//            @Override
+//            public void onFailure(int i, String s) {
+//                ToastUtils.showToast(GoodDetailActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
+//            }
+//        });
+        comment.save(new SaveListener<String>() {
             @Override
-            public void onSuccess() {
-                ToastUtils.showToast(GoodDetailActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
-                list.add(comment);
-                adapter.notifyDataSetChanged();
-                setListViewHeightBasedOnChildren(commentLv);
-                dishCommentEt.setText("");
-                dishObject.update(GoodDetailActivity.this, new UpdateListener() {
-                    @Override
-                    public void onSuccess() {
-                    }
+            public void done(String s, BmobException e) {
+                if(e==null){
+                    ToastUtils.showToast(GoodDetailActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
+                    list.add(comment);
+                    adapter.notifyDataSetChanged();
+                    setListViewHeightBasedOnChildren(commentLv);
+                    dishCommentEt.setText("");
+                    dishObject.update(new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
 
-                    @Override
-                    public void onFailure(int i, String s) {
+                        }
+                    });
+                }else{
+                    ToastUtils.showToast(GoodDetailActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
+                }
 
-                    }
-                });
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                ToastUtils.showToast(GoodDetailActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
             }
         });
     }
@@ -309,10 +341,34 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
             return;*/
         // query.setSkip(list.size());
         query.include("user");
-        query.findObjects(this, new FindListener<Comment>() {
+//        query.findObjects(this, new FindListener<Comment>() {
+//            @Override
+//            public void onSuccess(List<Comment> lists) {
+//                if (lists.size() != 0 && lists.get(lists.size() - 1) != null) {
+//                    if (lists.size() < Constant.NUM_PER_PAGE)
+//                        loadMoreComment.setText("暂无更多评论");
+//                    ToastUtils.showToast(GoodDetailActivity.this, R.string.load_comment_success, Toast.LENGTH_SHORT);
+//                    list.addAll(lists);
+//                    LogUtils.i(TAG, lists.size() + "");
+//                    adapter.notifyDataSetChanged();
+//                    setListViewHeightBasedOnChildren(commentLv);
+//                } else {
+//                    loadMoreComment.setText("暂无更多评论");
+//                    ToastUtils.showToast(GoodDetailActivity.this, R.string.no_more_comments, Toast.LENGTH_SHORT);
+//                }
+//            }
+//
+//            @Override
+//            public void onError(int i, String s) {
+//                ToastUtils.showToast(GoodDetailActivity.this, R.string.query_fail, Toast.LENGTH_SHORT);
+//
+//            }
+//        });
+        query.findObjects(new FindListener<Comment>() {
             @Override
-            public void onSuccess(List<Comment> lists) {
-                if (lists.size() != 0 && lists.get(lists.size() - 1) != null) {
+            public void done(List<Comment> lists, BmobException e) {
+                if(e==null){
+                    if (lists.size() != 0 && lists.get(lists.size() - 1) != null) {
                     if (lists.size() < Constant.NUM_PER_PAGE)
                         loadMoreComment.setText("暂无更多评论");
                     ToastUtils.showToast(GoodDetailActivity.this, R.string.load_comment_success, Toast.LENGTH_SHORT);
@@ -324,11 +380,9 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
                     loadMoreComment.setText("暂无更多评论");
                     ToastUtils.showToast(GoodDetailActivity.this, R.string.no_more_comments, Toast.LENGTH_SHORT);
                 }
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                ToastUtils.showToast(GoodDetailActivity.this, R.string.query_fail, Toast.LENGTH_SHORT);
+                }else{
+                    ToastUtils.showToast(GoodDetailActivity.this, R.string.query_fail, Toast.LENGTH_SHORT);
+                }
 
             }
         });
@@ -339,7 +393,7 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     ///写死了
     //////////////////////////////////////////////
     public boolean isLogin() {
-        BmobUser user = BmobUser.getCurrentUser(this, User.class);
+        BmobUser user = BmobUser.getCurrentUser(User.class);
         if (user != null) {
             return true;
         }

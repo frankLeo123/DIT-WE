@@ -40,6 +40,7 @@ import butterknife.InjectView;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobRelation;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.UpdateListener;
 
@@ -146,38 +147,59 @@ public class SquareFragment extends BaseFragment implements PostListAdapter.OnFe
         query.order("-createdAt");
         query.include("author");
         query.setLimit(Constant.NUM_PER_PAGE);
-        query.findObjects(context, new FindListener<Post>() {
+//        query.findObjects(context, new FindListener<Post>() {
+//            @Override
+//            public void onSuccess(List<Post> list) {
+//                LogUtils.i(TAG, "query success " + list.size());
+//                if (postPage == 1) {
+//                    postList.clear();
+//                    postList.addAll(list);
+//                    adapter.notifyDataSetChanged();
+//                    swipeRefreshLayout.setRefreshing(false);
+//                } else {
+//                    postList.addAll(list);
+//                    adapter.notifyDataSetChanged();
+//                    swipeRefreshLayout.setLoading(false);
+//                }
+//            }
+//            @Override
+//            public void onError(int i, String s) {
+//                LogUtils.i(TAG, "query fail");
+//                postPage--;
+//                if (postPage <= 1)
+//                    postPage = 1;
+//                ToastUtils.showToast(context, s, Toast.LENGTH_SHORT);
+//            }
+//        });
+        query.findObjects(new FindListener<Post>() {
             @Override
-            public void onSuccess(List<Post> list) {
-                LogUtils.i(TAG, "query success " + list.size());
-                if (postPage == 1) {
-                    postList.clear();
-                    postList.addAll(list);
-                    adapter.notifyDataSetChanged();
-                    swipeRefreshLayout.setRefreshing(false);
-                } else {
-                    postList.addAll(list);
-                    adapter.notifyDataSetChanged();
-                    swipeRefreshLayout.setLoading(false);
+            public void done(List<Post> list, BmobException e) {
+                if(e==null) {
+                    LogUtils.i(TAG, "query success " + list.size());
+                    if (postPage == 1) {
+                        postList.clear();
+                        postList.addAll(list);
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
+                    } else {
+                        postList.addAll(list);
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setLoading(false);
+                    }
                 }
-
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                LogUtils.i(TAG, "query fail");
+                else{
+                    LogUtils.i(TAG, "query fail");
                 postPage--;
                 if (postPage <= 1)
                     postPage = 1;
-                ToastUtils.showToast(context, s, Toast.LENGTH_SHORT);
+                ToastUtils.showToast(context, "post出错", Toast.LENGTH_SHORT);
+                }
             }
         });
-
-
     }
 
     public boolean isLogin() {
-        BmobUser user = BmobUser.getCurrentUser(context, User.class);
+        BmobUser user = BmobUser.getCurrentUser(User.class);
         if (user != null) {
             return true;
         }
@@ -212,7 +234,7 @@ public class SquareFragment extends BaseFragment implements PostListAdapter.OnFe
         PostListAdapter.ViewHolder holder = (PostListAdapter.ViewHolder) view.getTag(R.id.tag_holder);
         ImageView praiseImg = holder.praiseImg;
         TextSwitcher textSwitcher = holder.likeCounterSwitcher;
-        final User user = BmobUser.getCurrentUser(context, User.class);
+        final User user = BmobUser.getCurrentUser(User.class);
         final BmobRelation relation = new BmobRelation();
         final Post post = postList.get(position);
         if (!post.isMyPraise()) {
@@ -223,29 +245,52 @@ public class SquareFragment extends BaseFragment implements PostListAdapter.OnFe
             user.setLoveRelation(relation);
             post.setPraiseNum(post.getPraiseNum() + 1);
             setupLikesCounter(textSwitcher, position);
-            user.update(context, new UpdateListener() {
+//            user.update(context, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//                    Toast.makeText(context, R.string.collect_success, Toast.LENGTH_LONG).show();
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    Toast.makeText(context, R.string.collect_fail, Toast.LENGTH_LONG).show();
+//                    post.setMyPraise(false);
+//                    relation.remove(post);
+//                    user.setLoveRelation(relation);
+//                }
+//            });
+            user.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
-                    Toast.makeText(context, R.string.collect_success, Toast.LENGTH_LONG).show();
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    Toast.makeText(context, R.string.collect_fail, Toast.LENGTH_LONG).show();
-                    post.setMyPraise(false);
-                    relation.remove(post);
-                    user.setLoveRelation(relation);
+                public void done(BmobException e) {
+                    if(e==null){
+                        Toast.makeText(context, R.string.collect_success, Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(context, R.string.collect_fail, Toast.LENGTH_LONG).show();
+                        post.setMyPraise(false);
+                        relation.remove(post);
+                        user.setLoveRelation(relation);
+                    }
                 }
             });
-            post.update(context, new UpdateListener() {
+//            post.update(context, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    post.setMyPraise(false);
+//                }
+//            });
+            post.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
+                public void done(BmobException e) {
+                    if(e==null){
 
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    post.setMyPraise(false);
+                    }else{
+                        post.setMyPraise(false);
+                    }
                 }
             });
         } else {
@@ -257,29 +302,51 @@ public class SquareFragment extends BaseFragment implements PostListAdapter.OnFe
             LogUtils.i(TAG, post.isMyPraise() + "after undo");
             relation.remove(post);
             user.setLoveRelation(relation);
-            user.update(context, new UpdateListener() {
+//            user.update(context, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//
+//                    Toast.makeText(context, R.string.cancel_collect_success, Toast.LENGTH_LONG).show();
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    relation.add(post);
+//                    user.setLoveRelation(relation);
+//                    Toast.makeText(context, R.string.cancel_collect_fail, Toast.LENGTH_LONG).show();
+//                }
+//            });
+            user.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
-
-                    Toast.makeText(context, R.string.cancel_collect_success, Toast.LENGTH_LONG).show();
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    relation.add(post);
-                    user.setLoveRelation(relation);
-                    Toast.makeText(context, R.string.cancel_collect_fail, Toast.LENGTH_LONG).show();
+                public void done(BmobException e) {
+                    if (e==null){
+                        Toast.makeText(context, R.string.cancel_collect_success, Toast.LENGTH_LONG).show();
+                    }else{
+                        relation.add(post);
+                        user.setLoveRelation(relation);
+                        Toast.makeText(context, R.string.cancel_collect_fail, Toast.LENGTH_LONG).show();
+                    }
                 }
             });
-            post.update(context, new UpdateListener() {
+//            post.update(context, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    post.setMyPraise(true);
+//                }
+//            });
+            post.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
+                public void done(BmobException e) {
+                    if(e==null){
 
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    post.setMyPraise(true);
+                    }else{
+                        post.setMyPraise(true);
+                    }
                 }
             });
         }

@@ -46,6 +46,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.datatype.BmobRelation;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
@@ -151,10 +152,10 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
 
 
     private void initPostView() {
-        User user = BmobUser.getCurrentUser(this, User.class);
+        User user = BmobUser.getCurrentUser( User.class);
         LogUtils.i(TAG, "user :" + user);
         if (user.getUserImage() != null) {
-            String avatarUri = user.getUserImage().getFileUrl(this);
+            String avatarUri = user.getUserImage().getFileUrl();
             if (avatarUri != null) {
                 Picasso.with(this).
                         load(Uri.parse(avatarUri)).
@@ -172,7 +173,7 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
             postImageList.setVisibility(View.GONE);
         } else {
             postImageList.setVisibility(View.VISIBLE);
-            String pictureUri = post.getPostImageFile().getFileUrl(this);
+            String pictureUri = post.getPostImageFile().getFileUrl();
             if (pictureUri != null) {
                 Glide.clear(pic1);
                 Glide.with(this).
@@ -240,7 +241,7 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
         String commentContent = commentEt.getText().toString().trim();
         LogUtils.i(TAG, commentContent);
         if (!TextUtils.isEmpty(commentContent)) {
-            User user = BmobUser.getCurrentUser(this, User.class);
+            User user = BmobUser.getCurrentUser(User.class);
             LogUtils.i(TAG, "user :" + user);
             publishComment(user, commentContent);
             return true;
@@ -256,10 +257,54 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
         final Comment comment = new Comment();
         comment.setUser(user);
         comment.setCommentContent(commentContent);
-        comment.save(this, new SaveListener() {
+//        comment.save(this, new SaveListener() {
+//            @Override
+//            public void onSuccess() {
+//                ToastUtils.showToast(CommentActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
+//                try {
+//                    if (commentAdapter.getCount() < Constant.NUM_PER_PAGE) {
+//                        lists.add(comment);
+//                        commentAdapter.notifyDataSetChanged();
+//                        commentEt.setText("");
+//                        hideSoftKeyBoard();
+//                        setListViewHeightBasedOnChildren(commentList);
+//                        LogUtils.i(TAG, commentList + "");
+//                     /*   commentEt.setText("");
+//                        hideSoftKeyBoard();*/
+//                        BmobRelation relation = new BmobRelation();
+//                        relation.add(comment);
+//                        post.setRelation(relation);
+//                        post.setCommentNum(post.getCommentNum() + 1);
+//                        setupCommentsCounter(commentCounterSwitcher);
+//                        post.update(CommentActivity.this, new UpdateListener() {
+//                            @Override
+//                            public void onSuccess() {
+//
+//                            }
+//
+//                            @Override
+//                            public void onFailure(int i, String s) {
+//
+//                            }
+//                        });
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//
+//            @Override
+//
+//            public void onFailure(int i, String s) {
+//                ToastUtils.showToast(CommentActivity.this, R.string.comment_fail, Toast.LENGTH_SHORT);
+//            }
+//        });
+        comment.save(new SaveListener<String>() {
             @Override
-            public void onSuccess() {
-                ToastUtils.showToast(CommentActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
+            public void done(String s, BmobException e) {
+                if(e==null){
+                    ToastUtils.showToast(CommentActivity.this, R.string.comment_success, Toast.LENGTH_SHORT);
                 try {
                     if (commentAdapter.getCount() < Constant.NUM_PER_PAGE) {
                         lists.add(comment);
@@ -275,28 +320,34 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
                         post.setRelation(relation);
                         post.setCommentNum(post.getCommentNum() + 1);
                         setupCommentsCounter(commentCounterSwitcher);
-                        post.update(CommentActivity.this, new UpdateListener() {
+//                        post.update(new UpdateListener() {
+//                            @Override
+//                            public void onSuccess() {
+//
+//                            }
+//
+//                            @Override
+//                            public void onFailure(int i, String s) {
+//
+//                            }
+//                        });
+                        post.update(new UpdateListener() {
                             @Override
-                            public void onSuccess() {
+                            public void done(BmobException e) {
+                                if (e==null){
 
-                            }
+                                }else{
 
-                            @Override
-                            public void onFailure(int i, String s) {
-
+                                }
                             }
                         });
                     }
-                } catch (Exception e) {
+                } catch (Exception e1) {
                     e.printStackTrace();
+                }}
+                else{
+
                 }
-
-            }
-
-            @Override
-
-            public void onFailure(int i, String s) {
-                ToastUtils.showToast(CommentActivity.this, R.string.comment_fail, Toast.LENGTH_SHORT);
             }
         });
 
@@ -318,7 +369,7 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
 
     private void onClickPraise() {
         LogUtils.i(TAG, "onClickPraise");
-        final User user = BmobUser.getCurrentUser(this, User.class);
+        final User user = BmobUser.getCurrentUser(User.class);
         final BmobRelation relation = new BmobRelation();
         if (!post.isMyPraise()) {
             setupPraiseAnim();
@@ -326,30 +377,54 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
             praiseImg.setImageResource(R.drawable.ic_heart_red);
             relation.add(post);
             user.setLoveRelation(relation);
-            user.update(this, new UpdateListener() {
+//            user.update(this, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//                    ToastUtils.showToast(CommentActivity.this, R.string.collect_success, Toast.LENGTH_SHORT);
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    ToastUtils.showToast(CommentActivity.this, R.string.collect_fail, Toast.LENGTH_SHORT);
+//                    post.setMyPraise(false);
+//                    relation.remove(post);
+//                    user.setLoveRelation(relation);
+//                }
+//            });
+            user.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
-                    ToastUtils.showToast(CommentActivity.this, R.string.collect_success, Toast.LENGTH_SHORT);
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    ToastUtils.showToast(CommentActivity.this, R.string.collect_fail, Toast.LENGTH_SHORT);
-                    post.setMyPraise(false);
-                    relation.remove(post);
-                    user.setLoveRelation(relation);
+                public void done(BmobException e) {
+                    if(e==null){
+                        ToastUtils.showToast(CommentActivity.this, R.string.collect_success, Toast.LENGTH_SHORT);
+                    }else{
+                        ToastUtils.showToast(CommentActivity.this, R.string.collect_fail, Toast.LENGTH_SHORT);
+                        post.setMyPraise(false);
+                        relation.remove(post);
+                        user.setLoveRelation(relation);
+                    }
                 }
             });
-            post.update(this, new UpdateListener() {
+//            post.update(this, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//                    post.setPraiseNum(post.getPraiseNum() + 1);
+//                    setupLikesCounter(likeCounterSwitcher);
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    post.setMyPraise(false);
+//                }
+//            });
+            post.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
-                    post.setPraiseNum(post.getPraiseNum() + 1);
-                    setupLikesCounter(likeCounterSwitcher);
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    post.setMyPraise(false);
+                public void done(BmobException e) {
+                    if(e==null){
+                        post.setPraiseNum(post.getPraiseNum() + 1);
+                        setupLikesCounter(likeCounterSwitcher);
+                    }else{
+                        post.setMyPraise(false);
+                    }
                 }
             });
         } else {
@@ -357,30 +432,55 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
             praiseImg.setImageResource(R.drawable.ic_heart_outline_grey);
             relation.remove(post);
             user.setLoveRelation(relation);
-            user.update(this, new UpdateListener() {
+//            user.update(this, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//
+//                    ToastUtils.showToast(CommentActivity.this, R.string.cancel_collect_success, Toast.LENGTH_SHORT);
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    relation.add(post);
+//                    user.setLoveRelation(relation);
+//                    ToastUtils.showToast(CommentActivity.this, R.string.cancel_collect_fail, Toast.LENGTH_SHORT);
+//                }
+//            });
+            user.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
-
-                    ToastUtils.showToast(CommentActivity.this, R.string.cancel_collect_success, Toast.LENGTH_SHORT);
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    relation.add(post);
-                    user.setLoveRelation(relation);
-                    ToastUtils.showToast(CommentActivity.this, R.string.cancel_collect_fail, Toast.LENGTH_SHORT);
+                public void done(BmobException e) {
+                    if(e==null){
+                        ToastUtils.showToast(CommentActivity.this, R.string.cancel_collect_success, Toast.LENGTH_SHORT);
+                    }
+                    else{
+                        relation.add(post);
+                        user.setLoveRelation(relation);
+                        ToastUtils.showToast(CommentActivity.this, R.string.cancel_collect_fail, Toast.LENGTH_SHORT);
+                    }
                 }
             });
-            post.update(this, new UpdateListener() {
+//            post.update(this, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//                    post.setPraiseNum(post.getPraiseNum() - 1);
+//                    setupLikesCounter(likeCounterSwitcher);
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//                    post.setMyPraise(true);
+//                }
+//            });
+            post.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
-                    post.setPraiseNum(post.getPraiseNum() - 1);
-                    setupLikesCounter(likeCounterSwitcher);
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    post.setMyPraise(true);
+                public void done(BmobException e) {
+                    if(e==null){
+                        post.setPraiseNum(post.getPraiseNum() - 1);
+                        setupLikesCounter(likeCounterSwitcher);
+                    }
+                    else{
+                        post.setMyPraise(true);
+                    }
                 }
             });
         }
@@ -419,10 +519,29 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
         query.setLimit(Constant.NUM_PER_PAGE);
         query.setSkip(lists.size());
         query.include("user");
-        query.findObjects(this, new FindListener<Comment>() {
+//        query.findObjects(this, new FindListener<Comment>() {
+//            @Override
+//            public void onSuccess(List<Comment> list) {
+//                if (list.size() != 0 && list.get(list.size() - 1) != null) {
+//                    lists.addAll(list);
+//                    commentAdapter.notifyDataSetChanged();
+//                    setListViewHeightBasedOnChildren(commentList);
+//                    LogUtils.i(TAG, commentList + "");
+//                } else {
+//                    ToastUtils.showToast(CommentActivity.this, R.string.no_more_comments, Toast.LENGTH_SHORT);
+//                }
+//            }
+//
+//            @Override
+//            public void onError(int i, String s) {
+//                ToastUtils.showToast(CommentActivity.this, R.string.connect_internet_fail, Toast.LENGTH_SHORT);
+//            }
+//        });
+        query.findObjects(new FindListener<Comment>() {
             @Override
-            public void onSuccess(List<Comment> list) {
-                if (list.size() != 0 && list.get(list.size() - 1) != null) {
+            public void done(List<Comment> list, BmobException e) {
+                if(e==null){
+                    if (list.size() != 0 && list.get(list.size() - 1) != null) {
                     lists.addAll(list);
                     commentAdapter.notifyDataSetChanged();
                     setListViewHeightBasedOnChildren(commentList);
@@ -430,11 +549,9 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
                 } else {
                     ToastUtils.showToast(CommentActivity.this, R.string.no_more_comments, Toast.LENGTH_SHORT);
                 }
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                ToastUtils.showToast(CommentActivity.this, R.string.connect_internet_fail, Toast.LENGTH_SHORT);
+                }else{
+                    ToastUtils.showToast(CommentActivity.this, R.string.connect_internet_fail, Toast.LENGTH_SHORT);
+                }
             }
         });
 

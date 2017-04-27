@@ -40,14 +40,14 @@ public class MyApplication extends Application {
 
     }*/
     public boolean isLogin() {
-        BmobUser user = BmobUser.getCurrentUser(mContext, User.class);
+        BmobUser user = BmobUser.getCurrentUser(User.class);
         if (user != null) {
             return true;
         }
         return false;
     }
     public  User getCurrentUser() {
-        User user=BmobUser.getCurrentUser(mContext, User.class);
+        User user=BmobUser.getCurrentUser(User.class);
         if (user!=null)
         return user;
         return null;

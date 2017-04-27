@@ -33,6 +33,7 @@ import java.util.Locale;
 import butterknife.InjectView;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 
@@ -70,7 +71,7 @@ public class CreatePostActivity extends BaseActivity implements View.OnClickList
         super.initData();
         LogUtils.i(TAG, "onCreate");
         mContext = this;
-        user = BmobUser.getCurrentUser(this, User.class);
+        user = BmobUser.getCurrentUser(User.class);
         initToolbar();
 
     }
@@ -226,31 +227,46 @@ public class CreatePostActivity extends BaseActivity implements View.OnClickList
 
     }
 
-    //bmob传图
+    //bmob传图 需要改
     public void publishPost(final String commentContent) {
         final BmobFile imageFile = new BmobFile(new File(imageUri));
 
-        imageFile.upload(mContext, new UploadFileListener() {
-
+//        imageFile.upload(mContext, new UploadFileListener() {
+//
+//            @Override
+//            public void onSuccess() {
+//                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_image_success, Toast.LENGTH_SHORT);
+//                publishPostNoImage(commentContent, imageFile);
+//                onBackPressed();
+//            }
+//
+//            @Override
+//            public void onFailure(int i, String s) {
+//                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_image_fail, Toast.LENGTH_SHORT);
+//            }
+//        });图片
+        ////////////////////////////////////////////
+        //改为了单一上传
+        //////////////////////////////////////////
+        imageFile.upload(new UploadFileListener() {
             @Override
-            public void onSuccess() {
-                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_image_success, Toast.LENGTH_SHORT);
-                publishPostNoImage(commentContent, imageFile);
-                onBackPressed();
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_image_fail, Toast.LENGTH_SHORT);
+            public void done(BmobException e) {
+                if(e==null){
+                    ToastUtils.showToast(CreatePostActivity.this, R.string.upload_image_success, Toast.LENGTH_SHORT);
+                    publishPostNoImage(commentContent, imageFile);
+                    onBackPressed();
+                }
+                else{
+                    ToastUtils.showToast(CreatePostActivity.this, R.string.upload_image_fail, Toast.LENGTH_SHORT);
+                }
             }
         });
-
 
     }
 
     public void publishPostNoImage(String commentContent, BmobFile imageFile) {
         final Post post = new Post();
-        User user = BmobUser.getCurrentUser(mContext, User.class);
+        User user = BmobUser.getCurrentUser(User.class);
         post.setAuthor(user);
         post.setPraiseNum(0);
         post.setCommentNum(0);
@@ -260,16 +276,27 @@ public class CreatePostActivity extends BaseActivity implements View.OnClickList
         if (imageFile != null) {
             post.setPostImageFile(imageFile);
         }
-        post.save(this, new SaveListener() {
+//        post.save(this, new SaveListener() {
+//            @Override
+//            public void onSuccess() {
+//                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_post_success, Toast.LENGTH_SHORT);
+//                onBackPressed();
+//            }
+//
+//            @Override
+//            public void onFailure(int i, String s) {
+//                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
+//            }
+//        });
+        post.save(new SaveListener<String>() {
             @Override
-            public void onSuccess() {
-                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_post_success, Toast.LENGTH_SHORT);
-                onBackPressed();
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                ToastUtils.showToast(CreatePostActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
+            public void done(String s, BmobException e) {
+                if(e==null){
+                    ToastUtils.showToast(CreatePostActivity.this, R.string.upload_post_success, Toast.LENGTH_SHORT);
+                    onBackPressed();
+                }else{
+                    ToastUtils.showToast(CreatePostActivity.this, R.string.upload_post_fail, Toast.LENGTH_SHORT);
+                }
             }
         });
 

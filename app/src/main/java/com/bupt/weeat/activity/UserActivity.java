@@ -33,6 +33,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.bmob.v3.listener.UploadFileListener;
 
@@ -76,7 +77,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
     protected void initData() {
         super.initData();
         initToolbar();
-        user = BmobUser.getCurrentUser(this, User.class);
+        user = BmobUser.getCurrentUser( User.class);
         ButterKnife.inject(this);
         initPersonalInfo();
     }
@@ -93,7 +94,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
             public void onClick(View v) {
                 Intent intent = new Intent();
                 BmobFile imageFile = user.getUserImage();
-                LogUtils.i(TAG, "onClick" + imageFile.getFileUrl(UserActivity.this));
+                LogUtils.i(TAG, "onClick" + imageFile.getFileUrl());
                 setResult(RESULT_CODE__USER, intent);
                 finish();
 
@@ -123,7 +124,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
             }
             BmobFile imageFile = user.getUserImage();
             if (imageFile != null) {
-                String avatarUrl = imageFile.getFileUrl(this);
+                String avatarUrl = imageFile.getFileUrl();
                 LogUtils.i(TAG, avatarUrl + " avatarUrl");
                 Glide.clear(userAvatar);
 
@@ -166,7 +167,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
         switch (v.getId()) {
             case R.id.logout:
                 if (isLogin()) {
-                    BmobUser.logOut(this);
+                    BmobUser.logOut();
                     ToastUtils.showToast(this, R.string.already_logout, Toast.LENGTH_SHORT);
                     skipLogin();
                 }
@@ -210,26 +211,47 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
                                 .into(userAvatar);
                         final BmobFile file = new BmobFile(new File(avatarUrl));
                         user.setUserImage(file);
-                        file.uploadblock(this, new UploadFileListener() {
+//                        file.uploadblock(this, new UploadFileListener() {
+//                            @Override
+//                            public void onSuccess() {
+//                                user.update(UserActivity.this, new UpdateListener() {
+//                                    @Override
+//                                    public void onSuccess() {
+//                                        LogUtils.i(TAG, "update user image success");
+//                                    }
+//
+//                                    @Override
+//                                    public void onFailure(int i, String s) {
+//                                        LogUtils.i(TAG, s);
+//                                    }
+//                                });
+//
+//                            }
+//
+//                            @Override
+//                            public void onFailure(int i, String s) {
+//                                LogUtils.i(TAG, s);
+//                            }
+//                        });
+                        file.uploadblock(new UploadFileListener() {
                             @Override
-                            public void onSuccess() {
-                                user.update(UserActivity.this, new UpdateListener() {
-                                    @Override
-                                    public void onSuccess() {
-                                        LogUtils.i(TAG, "update user image success");
-                                    }
-
-                                    @Override
-                                    public void onFailure(int i, String s) {
-                                        LogUtils.i(TAG, s);
-                                    }
-                                });
-
-                            }
-
-                            @Override
-                            public void onFailure(int i, String s) {
-                                LogUtils.i(TAG, s);
+                            public void done(BmobException e) {
+                                if(e==null){
+                                    user.update(new UpdateListener() {
+                                        @Override
+                                        public void done(BmobException e) {
+                                            if(e==null){
+                                                LogUtils.i(TAG, "update user image success");
+                                            }
+                                            else{
+                                                LogUtils.i(TAG, "^              ^");
+                                            }
+                                        }
+                                    });
+                                }
+                                else{
+                                    LogUtils.i(TAG, "^上传图片失败                   ^");
+                                }
                             }
                         });
                     }
@@ -275,15 +297,25 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
             } else {
                 user.setSex(Constant.FEMALE_SEX);
             }
-            user.update(this, new UpdateListener() {
+//            user.update(this, new UpdateListener() {
+//                @Override
+//                public void onSuccess() {
+//
+//                }
+//
+//                @Override
+//                public void onFailure(int i, String s) {
+//
+//                }
+//            });
+            user.update(new UpdateListener() {
                 @Override
-                public void onSuccess() {
+                public void done(BmobException e) {
+                    if(e==null){
 
-                }
+                    }else{
 
-                @Override
-                public void onFailure(int i, String s) {
-
+                    }
                 }
             });
         } else {
@@ -299,7 +331,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
     }
 //改
     public boolean isLogin() {
-        BmobUser user = BmobUser.getCurrentUser(this, User.class);
+        BmobUser user = BmobUser.getCurrentUser(User.class);
         if (user != null) {
             return true;
         }

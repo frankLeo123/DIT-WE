@@ -48,6 +48,4 @@ public class User extends BmobUser {
         this.sex = sex;
     }
 
-
-
 }

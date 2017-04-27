@@ -51,7 +51,7 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.ViewHo
         holder.postContent.setText(post.getContent());
         try {
             if (user.getUserImage() != null) {
-                String avatarUrl = user.getUserImage().getFileUrl(mContext);
+                String avatarUrl = user.getUserImage().getFileUrl();
                 LogUtils.i(TAG,avatarUrl);
                 if (avatarUrl != null) {
                     //Glide.clear(holder.userAvatar);
@@ -82,7 +82,7 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.ViewHo
         try {
             if (post.getPostImageFile() != null) {
                 holder.postImageList.setVisibility(View.VISIBLE);
-                String imageUri = post.getPostImageFile().getFileUrl(mContext);
+                String imageUri = post.getPostImageFile().getFileUrl();
                 Picasso.with(mContext).
                         load(imageUri)
                         .resize(60,60)

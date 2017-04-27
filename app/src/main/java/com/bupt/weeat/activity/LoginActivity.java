@@ -24,6 +24,7 @@ import com.bupt.weeat.utils.UserUtils;
 
 import butterknife.InjectView;
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 
 
@@ -224,8 +225,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     @Override
-    public void onSignUpFailure(String s) {
-        ToastUtils.showToast(this, s, Toast.LENGTH_SHORT);
+    public void onSignUpFailure() {
+        ToastUtils.showToast(this, "wrong", Toast.LENGTH_SHORT);
     }
 
     @Override
@@ -233,18 +234,29 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         LogUtils.i(TAG, " onLoginSuccess()");
         ToastUtils.showToast(this, R.string.login_success, Toast.LENGTH_SHORT);
         loginProgress.setVisibility(View.VISIBLE);
-        User user = BmobUser.getCurrentUser(context, User.class);
+        User user = BmobUser.getCurrentUser(User.class);
 //        User user=new User();
         user.setSex(Constant.MALE_SEX);
-        user.update(getApplicationContext(), new UpdateListener() {
+//        user.update(getApplicationContext(), new UpdateListener() {
+//            @Override
+//            public void onSuccess() {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(int i, String s) {
+//
+//            }
+//        });
+        user.update(new UpdateListener() {
             @Override
-            public void onSuccess() {
+            public void done(BmobException e) {
+                if(e==null){
 
-            }
+                }
+                else{
 
-            @Override
-            public void onFailure(int i, String s) {
-
+                }
             }
         });
         Intent intent = new Intent();
@@ -254,8 +266,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
 
     @Override
-    public void onLoginFailure(String s) {
-        ToastUtils.showToast(getApplicationContext(), s, Toast.LENGTH_SHORT);
+    public void onLoginFailure() {
+        ToastUtils.showToast(getApplicationContext(), "wrong", Toast.LENGTH_SHORT);
     }
 
 
