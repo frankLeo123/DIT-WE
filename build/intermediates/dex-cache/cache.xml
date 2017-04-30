@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.3.1/6904771474c058abfc5912c13d12b02754712165/leakcanary-watcher-1.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="6904771474c058abfc5912c13d12b02754712165">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.3.1_a9d1c9c187a76016cbeeb869edd3d5577d87138d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.github.chrisbanes.photoview/library/1.2.2/82eda228c92c1aab3c0c8626497f13baf249cdb4/library-1.2.2.jar"
         jumboMode="true"
         optimize="true"
@@ -36,15 +27,6 @@
         revision="25.0.0"
         sha1="a7537446a030da8eb0da4c71424d16c2589f6c4a">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.6.0_e1d02e12815f40f0d13ac5e7f889cf413715f3ef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/frank/.android/build-cache/178af8a8b609a25e938216d90e1d9a7142443435/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9066b6d4e2536b49e3b58aa301fd925247032df0">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7526839bfef9db7b9e3259aaaf1b0b57397e189c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -82,21 +64,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/frank/.android/build-cache/c67c0544b0dd8d3f2fc1b2e188c58498774cefdf/output/jars/libs/BmobSDK_3.5.0_20160630.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8eb5c605a02f792e326c5ac8e4feb2c18dd171ad">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/BmobSDK_3.5.0_20160630_dfb8e8c50c4e2858258c8302ae90ec808db7c814/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/frank/文档/DUT-WE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_aabc16a9ae03fe9ac63382fc9ef6ce7d342b9c0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/frank/.android/build-cache/c67c0544b0dd8d3f2fc1b2e188c58498774cefdf/output/jars/libs/BmobSDK_3.5.0_20160630.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8eb5c605a02f792e326c5ac8e4feb2c18dd171ad">
+        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/BmobSDK_3.5.0_20160630_dfb8e8c50c4e2858258c8302ae90ec808db7c814/classes.dex" />
     </item>
     <item
         jar="/home/frank/文档/DUT-WE/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
@@ -129,7 +111,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="877557f3cf7edcbbdb6da98d4fd5b25ce88ce810">
+        sha1="3fa9673c7b70d6e2591188b6f367fa63c1d3cf09">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_6578ccea7c061249521d360c90e7072672966657/classes.dex" />
     </item>
     <item
@@ -149,15 +131,6 @@
         revision="25.0.0"
         sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.0_992681b5117c518a4b55efcab818654cfa59af84/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.3.1/325e7401a7ea16918eb39ba8baad8fd5561a55d3/leakcanary-analyzer-1.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="325e7401a7ea16918eb39ba8baad8fd5561a55d3">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.3.1_a08967f3aefd2079557324d1601dc0357bb9ad07/classes.dex" />
     </item>
     <item
         jar="/home/frank/文档/DUT-WE/app/libs/Volley.jar"
@@ -237,15 +210,6 @@
         revision="25.0.0"
         sha1="f8efd0096475e0daf054267b61544e10dc776503">
         <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_baa6eea639c7be7f58e58dab81e72aa4ae34fba2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/frank/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/1.3/d2c832f9d14a11c79f58a7ee2e10526a12152c72/haha-1.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d2c832f9d14a11c79f58a7ee2e10526a12152c72">
-        <dex dex="/home/frank/文档/DUT-WE/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-1.3_cbd11c98366ef677aad6efd1d6f16918250ffac4/classes.dex" />
     </item>
     <item
         is-multidex="true"

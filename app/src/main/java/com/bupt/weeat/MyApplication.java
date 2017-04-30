@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.bupt.weeat.entity.User;
-import com.squareup.leakcanary.LeakCanary;
+//import com.squareup.leakcanary.LeakCanary;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;
@@ -25,7 +25,8 @@ public class MyApplication extends Application {
         super.onCreate();
         myApplication = this;
         mContext = getApplicationContext();
-        LeakCanary.install(this);
+        //去掉检测Leaks的
+//        LeakCanary.install(this);
         Bmob.initialize(myApplication, Constant.APPLICATION_ID);
 
     }

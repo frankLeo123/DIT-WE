@@ -13,9 +13,9 @@ public class Constant {
 //    public static final String NEW_GOOD_URL = "http://192.168.0.141:8080/hello/new.php";
 //    public static final String HOT_RECOMMENDATION_URL = "http://192.168.0.141:8080/hello/hot.php";
 //    电脑本机ip,哪怕是一个局域网
-    public static final String WEEK_RANK_URL = "http://192.168.26.183/week.php";
-    public static final String NEW_GOOD_URL = "http://192.168.26.183/new.php";
-    public static final String HOT_RECOMMENDATION_URL = "http://192.168.26.183/hot.php";
+    public static final String WEEK_RANK_URL = "http://192.168.26.92/week.php";
+    public static final String NEW_GOOD_URL = "http://192.168.26.92/new.php";
+    public static final String HOT_RECOMMENDATION_URL = "http://192.168.26.92/hot.php";
     //占位符已经不能用了
     public static final  String PLACEHOLDER_URL="http://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/929118_455075441302693_1605108410_a.jpg";
 }
