@@ -1,9 +1,9 @@
 package com.bupt.weeat.activity;
 
 
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
 import com.bupt.weeat.R;
 
 import butterknife.InjectView;
@@ -11,11 +11,13 @@ import butterknife.InjectView;
 public class SearchActivity extends BaseActivity {
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
+    private SearchView searchView;
 
     @Override
     protected void initData() {
         super.initData();
         initToolbar();
+        initSearch();
     }
 
     private void initToolbar() {
@@ -38,6 +40,11 @@ public class SearchActivity extends BaseActivity {
         return R.layout.activity_search;
     }
 
+    private void initSearch(){
+//        searchView=(SearchView)findViewById(R.id.search_view);
+//        searchView.setIconifiedByDefault(true);
+
+    }
     @Override
     protected void setListener() {
         super.setListener();

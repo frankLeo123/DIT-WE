@@ -60,11 +60,12 @@ public class MainActivity extends BaseActivity {
     private boolean pendingIntroAnim;
     private MenuItem menuItem;
     int avatarSize;
+
     @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
-    @InjectView(R.id.user_avatar_iv)
+//    @InjectView(R.id.user_avatar_iv)
     RoundImageView navUserAvatar;
-    @InjectView(R.id.user_name_tv)
+//    @InjectView(R.id.user_name_tv)
     TextView navUserName;
     @InjectView(R.id.nav)
     NavigationView nav;
@@ -111,6 +112,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setNavContent(NavigationView nav) {
+        View view = nav.inflateHeaderView(R.layout.navigation_header);
+        navUserAvatar= (RoundImageView) view.findViewById(R.id.user_avatar_iv);
+        navUserName= (TextView) view.findViewById(R.id.user_name_tv);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {

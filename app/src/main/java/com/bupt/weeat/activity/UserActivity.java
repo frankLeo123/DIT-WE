@@ -94,7 +94,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener, 
             public void onClick(View v) {
                 Intent intent = new Intent();
                 BmobFile imageFile = user.getUserImage();
-                LogUtils.i(TAG, "onClick" + imageFile.getFileUrl());
+//                LogUtils.i(TAG, "onClick" + imageFile.getFileUrl());
                 setResult(RESULT_CODE__USER, intent);
                 finish();
 

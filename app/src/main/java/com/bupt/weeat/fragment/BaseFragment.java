@@ -1,6 +1,7 @@
 package com.bupt.weeat.fragment;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,7 +15,7 @@ import net.AsyncHttpClient;
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {
-    protected Context context;
+    protected Activity context;
     protected View rootView;
     public AsyncHttpClient client;
 
@@ -35,7 +36,6 @@ public abstract class BaseFragment extends Fragment {
         initData();
         setListener();
         return rootView;
-
     }
 
     protected abstract int getLayoutId();
@@ -44,10 +44,7 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
-    protected void setListener()
-
-    {
-
+    protected void setListener() {
     }
 
 }

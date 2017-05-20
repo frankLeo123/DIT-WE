@@ -34,11 +34,25 @@
     <color name="primary_dark_night">#1E1F21</color>
     <color name="night_grey">#AAAAAA</color>
     <color name="night_accent">#AAAAAA</color>
-
-
-
-
-
+    <color name="backgroundColor">#fafafa</color>
+    <color name="main_color">#54aee6</color>
+    <color name="setting_toobar_line_color_night">#5a6285</color>
+    <color name="navigation_bg_color">#f7f7f7</color>
+    <color name="setting_toobar_line_color">#54aee6</color>
+    <color name="lineColor">#cccccc</color>
+    <color name="gank_text2_color">#3b3b3b</color>
+    <color name="gank_text2_color_night">#626f9b</color>
+    <color name="gank_text3_color_night">#464c61</color>
+    <color name="item_selecter_pressed_color_night">#f6202431</color>
+    <color name="item_setting_bg_night">#2A2F41</color>
+    <color name="item_selecter_pressed_color">#e6e6e6</color>
+    <color name="item_setting_bg">#ffffff</color>
+    <color name="fragment_background">#F0F0F0</color>
+    <color name="text_view_back">#6f757575</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="red_300">#E57373</color>
+    <color name="color_red">#FF6A6E</color>
+    <color name="color_red_light">#FFB4B6</color>
 
 
 </resources>

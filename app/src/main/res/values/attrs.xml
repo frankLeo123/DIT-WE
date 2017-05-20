@@ -14,8 +14,9 @@
         <attr name="borderRadius" />
         <attr name="type" />
     </declare-styleable>
+
     <declare-styleable name="MaterialLayout">
-        <attr name="alpha" format="integer" />
+        <attr name="alpha_v" format="integer" />
         <attr name="alpha_step" format="integer" />
         <attr name="frame_rate" format="integer" />
         <attr name="duration" format="integer" />
