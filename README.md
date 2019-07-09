@@ -2,7 +2,7 @@ DUT-WE
 =====
 项目简介
 ------
-本人毕设未完成，大部分借鉴一个同类型APP。这个APP主要是为了二手交易，是一个基于校园类的应用，没有上线计划。
+本人毕设，大部分借鉴一个同类型APP。这个APP主要是为了二手交易，是一个基于校园类的应用，没有上线计划。
 ------
 
 [Volley](https://android.googlesource.com/platform/frameworks/volley)
